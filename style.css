@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Archivo Black", serif;
     background: var(--background-gradient);
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -90,7 +90,7 @@ h1 {
 }
 
 input {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Archivo Black", serif;
     width: 100%;
     padding: 15px;
     margin-top: 15px;
