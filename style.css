@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: "Archivo Black", serif;
+    font-family: "Poppins", serif;
     background: var(--background-gradient);
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -30,10 +30,8 @@ body {
     padding-bottom: 15px;
 }
 
-.archivo-black-regular {
-  font-family: "Archivo Black", serif;
-  font-weight: 400;
-  font-style: normal;
+body, button, input {
+    font-family: "Poppins", serif;
 }
 
 img {
