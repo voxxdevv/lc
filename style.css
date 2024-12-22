@@ -30,6 +30,12 @@ body {
     padding-bottom: 15px;
 }
 
+.archivo-black-regular {
+  font-family: "Archivo Black", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 img {
     background: linear-gradient(#ffffff, #ffffff) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
