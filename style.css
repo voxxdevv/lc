@@ -33,7 +33,7 @@ body {
 img {
     background: linear-gradient(#ffffff, #ffffff) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
-    border-radius: 8px;
+    border-radius: 30px;
     border: 2px solid transparent;
     width: 100%;
     margin-top: 15px;
@@ -58,15 +58,15 @@ hr {
     background-image: linear-gradient(135deg, hotpink, limegreen);
     border: 0;
     height: 2px;
-    border-radius: 8px;
+    border-radius: 30px;
     margin-top: 15px; 
     margin-bottom: 15px;
     }
 
 .container {
     background: var(--card-background);
-    padding: 30px;
-    border-radius: 12px;
+    padding: 15px;
+    border-radius: 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     padding-bottom: 15px; 
     padding-top: 15px; 
@@ -94,7 +94,7 @@ input {
     margin-top: 15px;
     background: linear-gradient(#3e3e3e, #3e3e3e) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
-    border-radius: 8px;
+    border-radius: 30px;
     border: 2px solid transparent;
     resize: none;
     font-size: 1em;
@@ -139,7 +139,7 @@ button {
     margin-top: 15px;
     background-image: var(--background-gradient);
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     color: var(--text-color); /* White text */
     font-size: 1.1em;
     cursor: pointer;
