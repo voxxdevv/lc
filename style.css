@@ -71,6 +71,7 @@ hr {
     border-radius: 30px;
     margin-top: 20px; 
     margin-bottom: 20px;
+    animation: revealIn 1.5s ease forwards;
     }
 
 .container {
