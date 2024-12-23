@@ -41,9 +41,13 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
-body, button, .container {
+body, button, .container, .header, .footer {
 	 font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
      line-height: 1;
+}
+
+h6 {
+     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
 }
 
 .bestproject {
@@ -60,23 +64,26 @@ body, button, .container {
 	box-shadow: 0 -2px 15px rgba(249, 255, 144, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.lm-text-theme, .fa-gradient {
+.lm-text-theme {
         background: linear-gradient(135deg, hotpink, limegreen);    
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;            
-    }
+          -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;          
+     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
+}
 
 a {
         background: linear-gradient(135deg, #8ab4ff, #2f78f5); 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
         text-decoration: none;  
-          transition: text-decoration 0.2s;
+     text-shadow: none;
+     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
     }
-    
+
 a:hover {
   text-decoration: none;
 }
+
 
 hr {
     background-image: linear-gradient(135deg, hotpink, limegreen);
@@ -87,7 +94,7 @@ hr {
     margin-bottom: 20px;
     animation: revealIn 1.5s ease forwards;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
     }
 
 .container {
@@ -162,6 +169,7 @@ h1 {
     margin-top: 0px;
     font-size: 2em;
     animation: slideDown 0.5s ease-out;
+     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
 }
 
 @keyframes fadeIn {
@@ -203,6 +211,7 @@ button {
     cursor: pointer;
     transition: background-image 0.3s, transform 0.2s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
 }
 
 button:hover {
