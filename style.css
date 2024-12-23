@@ -45,6 +45,7 @@ img {
     margin-top: 20px;
     margin-bottom: 0px;
     object-fit: cover;
+    max-width: 200px;
     max-height: 200px;
      }
 
