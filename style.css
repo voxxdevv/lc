@@ -44,7 +44,6 @@ body {
 body, button, .container {
 	 font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
      line-height: 1;
-    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .bestproject {
