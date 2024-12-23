@@ -72,9 +72,11 @@ hr {
     }
 
 .container {
-    background: var(--card-background);
-    padding: 20px;
+        background: var(--card-background) padding-box,
+               linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
+    border: 2px solid transparent;
+    padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     padding-bottom: 20px; 
     padding-top: 20px; 
@@ -88,9 +90,11 @@ hr {
 
 .header {
     text-align: center;
-    background: var(--card-background);
-    padding: 20px;
+        background: var(--card-background) padding-box,
+               linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
+    border: 2px solid transparent;
+    padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     padding-bottom: 20px; 
     padding-top: 20px; 
@@ -106,9 +110,11 @@ hr {
 
 .footer {
     text-align: center;
-    background: var(--card-background);
-    padding: 20px;
+        background: var(--card-background) padding-box,
+               linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
+    border: 2px solid transparent;
+    padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     padding-bottom: 20px; 
     padding-top: 20px; 
