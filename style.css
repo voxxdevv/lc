@@ -3,6 +3,7 @@
     --primary-color: hotpink; /* Hotpink */
     --secondary-color: limegreen; /* LimeGreen */
     --background-gradient: linear-gradient(135deg, hotpink, limegreen); /* Pink-green gradient */
+    --background-color: #ffffff;
     --card-background: rgba(46, 46, 46, 0.9); /* Darker card background with transparency */
     --text-color: #ffffff; /* White text */
     --button-hover: limegreen; /* Limegreen to maintain consistency */       
@@ -16,7 +17,7 @@
 }
 
 body {
-    background: var(--background-gradient);
+    background: var(--background-color);
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
     color: var(--text-color); /* White text */
@@ -72,6 +73,7 @@ hr {
     }
 
 .container {
+    text-align: center;
     background: linear-gradient(rgba(46, 46, 46, 0.9), rgba(46, 46, 46, 0.9)) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
