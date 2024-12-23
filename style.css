@@ -157,6 +157,7 @@ input {
     color: var(--text-color); /* White text */
     background-color: #3e3e3e; /* Dark textarea */
     transition: background 0.3s;
+    max-width: 300px;
 }
 
 input::placeholder {
