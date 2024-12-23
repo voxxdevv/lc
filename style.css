@@ -44,7 +44,7 @@ img {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 0px;
-    max-width: 600px;
+    max-width: 300px;
     max-height: 300px;
      }
 
@@ -68,6 +68,7 @@ hr {
     border-radius: 30px;
     margin-top: 20px; 
     margin-bottom: 20px;
+    max-width: 300px;
     }
 
 .container {
@@ -181,6 +182,7 @@ input:focus {
 
 button {
     width: 100%;
+    max-width: 300px;
     padding: 20px;
     margin-top: 20px;
     background-image: var(--background-gradient);
