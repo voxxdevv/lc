@@ -66,6 +66,7 @@ hr {
     border: 0;
     height: 2px;
     border-radius: 30px;
+    margin: 0 auto;
     margin-top: 20px; 
     margin-bottom: 20px;
     max-width: 300px;
@@ -135,6 +136,10 @@ h1 {
     animation: slideDown 0.5s ease-out;
 }
 
+h6, p, h1 {
+        max-width: 300px;
+}
+
 input {
     width: 100%;
     padding: 20px;
@@ -148,6 +153,7 @@ input {
     color: var(--text-color); /* White text */
     background-color: #3e3e3e; /* Dark textarea */
     transition: background 0.3s;
+    max-width: 300px;
 }
 
 input::placeholder {
