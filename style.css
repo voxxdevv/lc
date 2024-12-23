@@ -66,10 +66,8 @@ hr {
     border: 0;
     height: 2px;
     border-radius: 30px;
-    margin: 0 auto;
     margin-top: 20px; 
     margin-bottom: 20px;
-    max-width: 300px;
     }
 
 .container {
@@ -83,7 +81,7 @@ hr {
     margin-top: 20px;
     margin-bottom: 0px;
     width: 100%;
-    max-width: 300px;
+    max-width: 600px;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -99,7 +97,7 @@ hr {
     margin-top: 0px;
     margin-bottom: 0px;
     width: 100%;
-    max-width: 300px;
+    max-width: 600px;
     animation: fadeIn 1s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -117,7 +115,7 @@ hr {
     margin-top: 20px;
     margin-bottom: 0px;
     width: 100%;
-    max-width: 300px;
+    max-width: 600px;
     animation: fadeIn 1s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -136,11 +134,6 @@ h1 {
     animation: slideDown 0.5s ease-out;
 }
 
-h6, p, h1 {
-        max-width: 300px;
-        margin: 0 auto;
-}
-
 input {
     width: 100%;
     padding: 20px;
@@ -154,7 +147,6 @@ input {
     color: var(--text-color); /* White text */
     background-color: #3e3e3e; /* Dark textarea */
     transition: background 0.3s;
-    max-width: 300px;
 }
 
 input::placeholder {
@@ -189,7 +181,6 @@ input:focus {
 
 button {
     width: 100%;
-    max-width: 300px;
     padding: 20px;
     margin-top: 20px;
     background-image: var(--background-gradient);
