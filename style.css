@@ -72,7 +72,8 @@ hr {
     }
 
 .container {
-        background: var(--card-background) padding-box,
+    background: var(--card-background);
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
     border: 2px solid transparent;
@@ -90,7 +91,8 @@ hr {
 
 .header {
     text-align: center;
-        background: var(--card-background) padding-box,
+    background: var(--card-background);
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
     border: 2px solid transparent;
@@ -110,7 +112,8 @@ hr {
 
 .footer {
     text-align: center;
-        background: var(--card-background) padding-box,
+    background: var(--card-background);
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
     border: 2px solid transparent;
