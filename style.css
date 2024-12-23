@@ -16,7 +16,6 @@
 }
 
 body {
-    font-family: "Poppins", serif;
     background: var(--background-gradient);
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -26,12 +25,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Ensure full height */
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 20px;
+    margin: 0;
+    flex-direction: column;
+    animation: fadeIn 1s ease-in-out;
 }
 
 body, button, input {
-    font-family: "Poppins", serif;
+	 font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 img {
@@ -40,12 +41,12 @@ img {
     border-radius: 30px;
     border: 2px solid transparent;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 0px;
     max-height: 300px;
-    max-width: 300px;
      }
 
-.lm-text-theme {
+.lm-text-theme, .fa-gradient {
         background: linear-gradient(135deg, hotpink, limegreen);    
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;            
@@ -63,31 +64,73 @@ hr {
     border: 0;
     height: 2px;
     border-radius: 30px;
-    margin-top: 15px; 
-    margin-bottom: 15px;
+    margin-top: 20px; 
+    margin-bottom: 20px;
     }
 
 .container {
     background: var(--card-background);
-    padding: 15px;
-    border-radius: 30px;
+    padding: 20px;
+    border-radius: 0px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    padding-bottom: 15px; 
-    padding-top: 15px; 
-    margin: 15px;
-    margin-top: 0px;
+    padding-bottom: 20px; 
+    padding-top: 20px; 
+    margin: 20px;
+    margin-top: 20px;
     margin-bottom: 0px;
     width: 100%;
     max-width: 600px;
     animation: fadeIn 1s ease-in-out;
 }
 
+.header {
+    text-align: center;
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 30px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px; 
+    padding-top: 20px; 
+    margin: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    text-align: center;
+    background: var(--card-background);
+    padding: 20px;
+    border-radius: 30px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px; 
+    padding-top: 20px; 
+    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 h1 {
     text-align: center;
     background: linear-gradient(-135deg, hotpink, limegreen);    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;    
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-top: 0px;
     font-size: 2em;
     animation: slideDown 0.5s ease-out;
@@ -95,8 +138,8 @@ h1 {
 
 input {
     width: 100%;
-    padding: 15px;
-    margin-top: 15px;
+    padding: 20px;
+    margin-top: 20px;
     background: linear-gradient(#3e3e3e, #3e3e3e) padding-box,
                linear-gradient(-135deg, hotpink, limegreen) border-box;
     border-radius: 30px;
@@ -140,8 +183,8 @@ input:focus {
 
 button {
     width: 100%;
-    padding: 15px;
-    margin-top: 15px;
+    padding: 20px;
+    margin-top: 20px;
     background-image: var(--background-gradient);
     border: none;
     border-radius: 30px;
@@ -161,16 +204,17 @@ button:active {
 }
 
 .detail {
-     margin-top: 15px;
+     margin-top: 20px;
 }
 
 /* Styles for the rest of the elements */
 .info-section {
-    margin-top: 15px;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 .copyright {
-    margin-top: 15px;
+    margin-top: 0px;
 }
 
 /* Animations */
