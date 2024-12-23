@@ -68,7 +68,7 @@ body, button, .container {
     }
 
 a {
-        background: linear-gradient(-135deg, ##babaf8, #FFFFFF);    
+        background: linear-gradient(-135deg, #babaf8, #FFFFFF);    
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
         text-decoration: none;  
