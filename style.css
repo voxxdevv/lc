@@ -3,8 +3,8 @@
     --primary-color: hotpink; /* Hotpink */
     --secondary-color: limegreen; /* LimeGreen */
     --background-gradient: linear-gradient(135deg, hotpink, limegreen); /* Pink-green gradient */
-    --background-color: rgba(46, 46, 46, 0.8);
-    --card-background: rgba(46, 46, 46, 0.8); /* Darker card background with transparency */
+    --background-color: rgba(46, 46, 46, 0.9);
+    --card-background: rgba(46, 46, 46, 0.7); /* Darker card background with transparency */
     --text-color: #ffffff; /* White text */
     --button-hover: limegreen; /* Limegreen to maintain consistency */       
     --placeholder-color: #b0b0b0; /* Light gray for placeholder */
