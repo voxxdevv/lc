@@ -22,6 +22,7 @@
   background-blend-mode: multiply;
     color: var(--placeholder-color); /* Light gray for disabled color */
 opacity: 0.8;
+    cursor: not-allowed;
 }
 
 
