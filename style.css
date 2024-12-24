@@ -21,7 +21,7 @@
     background-color: rgba(62,62,62,0.8);
   background-blend-mode: multiply;
     color: var(--placeholder-color); /* Light gray for disabled color */
-opacity: 0.7;
+opacity: 0.8;
 }
 
 
