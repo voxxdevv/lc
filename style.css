@@ -77,7 +77,7 @@ h6 {
     -webkit-text-fill-color: transparent; /* Make the text transparent so the background shows through */
     display: inline-block; /* Ensure the icon behaves like an inline block */
     font-size: 1.1em; /* Set icon size */
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5));
+     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
 }
 
 /* When the button is hovered, change the gradient of the icon */
