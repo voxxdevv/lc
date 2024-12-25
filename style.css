@@ -91,7 +91,7 @@ hr {
     border-radius: 30px;
     margin-top: 20px; 
     margin-bottom: 20px;
-    animation: revealIn 1.5s ease forwards;
+    animation: revealIn 1s ease forwards;
      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
     }
 
@@ -166,7 +166,7 @@ h1 {
     margin-bottom: 20px;
     margin-top: 0px;
     font-size: 2em;
-    animation: slideDown 1.5s ease-out;
+    animation: slideDown 1s ease-out;
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
 }
 
