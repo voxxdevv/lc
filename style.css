@@ -190,6 +190,22 @@ h1 {
     to { transform: translateY(-20px); opacity: 0; }
 }
 
+.warning {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    background-image: linear-gradient(31deg, rgba(208,52,44,1) 35%, rgba(227,133,128,1) 100%);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 30px;
+    color: var(--card-background);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-image 0.3s, transform 0.2s;
+     text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
+     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
+}
+
 button {
     width: 100%;
     padding: 20px;
