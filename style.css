@@ -78,6 +78,8 @@ h6 {
     display: inline-block; /* Ensure the icon behaves like an inline block */
     font-size: 1.1em; /* Set icon size */
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
+        padding: 20px;
+    border-radius: 50%;
 }
 
 /* When the button is hovered, change the gradient of the icon */
@@ -274,7 +276,7 @@ button:disabled:hover {
     text-shadow: none;
     border: 2px solid transparent;
     border-radius: 50%; /* Ensures circular shape */
-    padding: 20px; /* Inner spacing */
+    padding: 0; /* Inner spacing */
     display: flex; /* Enables flexbox */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
