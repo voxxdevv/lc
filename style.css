@@ -18,10 +18,10 @@
 }
 
 *:disabled {
-    background-color: var(--card-background);
+    background-color: rgba(62,62,62,0.8);
   background-blend-mode: multiply;
     color: var(--placeholder-color); /* Light gray for disabled color */
-opacity: 0.5;
+opacity: 0.8;
     cursor: not-allowed;
 }
 
@@ -238,7 +238,7 @@ button:active {
 }
 
 button:disabled {
-    color: var(--card-background);
+    color: var(--placeholder-color);
 }
 
 button:disabled:hover {
