@@ -1,7 +1,8 @@
 // script.js
 (function() {
-  // Ensure the script only runs once the document is fully loaded
   window.addEventListener('load', function() {
+    console.log("Page is fully loaded!");
+
     // Create the logo circle container
     var logoCircle = document.createElement('div');
     logoCircle.id = 'logo-circle';
@@ -16,5 +17,10 @@
 
     // Append the logo circle to the body of the page
     document.body.appendChild(logoCircle);
+
+    // Show the circle (unhide it)
+    logoCircle.style.visibility = 'visible';
+    
+    console.log("Logo circle added to the page!");
   });
 })();
