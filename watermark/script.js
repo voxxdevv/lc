@@ -1,45 +1,22 @@
 (function() {
   window.addEventListener('load', function() {
-    // Log to verify that the script runs
-    console.log("Page loaded and script executed.");
-
-    // Create the logo circle container
-    var logoCircle = document.createElement('div');
-    logoCircle.id = 'logo-circle';
-
-    // Style the circle with JavaScript
-    logoCircle.style.position = 'fixed';
-    logoCircle.style.bottom = '20px';
-    logoCircle.style.right = '20px';
-    logoCircle.style.width = 'calc(40px + 1.1em)';  // Size of the circle
-    logoCircle.style.height = 'calc(40px + 1.1em)'; // Size of the circle
-    logoCircle.style.backgroundColor = 'rgba(46, 46, 46, 0.8)';
-    logoCircle.style.borderRadius = '50%';  // This makes it a circle
-    logoCircle.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5)';
-    logoCircle.style.zIndex = '9999';
-    logoCircle.style.display = 'flex';
-    logoCircle.style.padding = '20px';
-    logoCircle.style.alignItems = 'center';
-    logoCircle.style.justifyContent = 'center';
-    logoCircle.style.opacity = '0.3';  // Set the opacity to 0.3
-
-    // Create the image element for the logo
+    // Create the image element
     var logoImg = document.createElement('img');
-    logoImg.src = 'https://raw.githubusercontent.com/voxxdevv/lmdesigns/refs/heads/main/images/lmc.png';  // Replace with your logo URL
-    logoImg.alt = 'Logo';
-    
-    // Style the logo image to fit within the circle
-    logoImg.style.width = '50px';  // Adjust size of the logo
-    logoImg.style.height = '50px'; // Adjust size of the logo
-    logoImg.style.objectFit = 'fill';  // Ensures the image fills the circle
+    logoImg.src = 'https://raw.githubusercontent.com/voxxdevv/lmdesigns/refs/heads/main/images/lmc.png';  // Replace with the actual URL of your logo
+    logoImg.alt = 'Page watermarked by Loud Monkey Designs™.';
 
-    // Append the image to the circle
-    logoCircle.appendChild(logoImg);
+    // Style the image to appear in the bottom-right corner
+    logoImg.style.position = 'fixed';
+    logoImg.style.bottom = '20px';  // Distance from the bottom
+    logoImg.style.right = '20px';   // Distance from the right
+    logoImg.style.width = 'calc(40px + 2.2em)';   // Width of the image
+    logoImg.style.height = 'calc(40px + 2.2em)';  // Height of the image
+    logoImg.style.opacity = '0.4';  // Set the opacity to 0.4
 
-    // Append the logo circle to the body of the page
-    document.body.appendChild(logoCircle);
+    // Append the image to the body of the page
+    document.body.appendChild(logoImg);
 
-    // Log to verify that the logo circle is added
-    console.log("Logo circle added to the page!");
+    // Log to verify that the image is added
+    console.log("Page watermarked by Loud Monkey Designs™.");
   });
 })();
