@@ -11,13 +11,14 @@
     logoCircle.style.position = 'fixed';
     logoCircle.style.bottom = '20px';
     logoCircle.style.right = '20px';
-    logoCircle.style.width = '60px';  // Size of the circle
-    logoCircle.style.height = '60px'; // Size of the circle
+    logoCircle.style.width = 'calc(40px + 1.1em)';  // Size of the circle
+    logoCircle.style.height = 'calc(40px + 1.1em)'; // Size of the circle
     logoCircle.style.backgroundColor = 'rgba(46, 46, 46, 0.8)';
     logoCircle.style.borderRadius = '50%';  // This makes it a circle
     logoCircle.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5)';
     logoCircle.style.zIndex = '9999';
     logoCircle.style.display = 'flex';
+    logoCircle.style.padding = '20px';
     logoCircle.style.alignItems = 'center';
     logoCircle.style.justifyContent = 'center';
     logoCircle.style.opacity = '0.3';  // Set the opacity to 0.3
