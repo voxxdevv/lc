@@ -9,7 +9,7 @@
     
     // Create an image element and set its source to your logo
     var logoImg = document.createElement('img');
-    logoImg.src = 'https://yourcdn.com/logo.png';  // Replace with your logo URL
+    logoImg.src = 'https://raw.githubusercontent.com/voxxdevv/lmdesigns/refs/heads/main/images/lmc.png';  // Replace with your logo URL
     logoImg.alt = 'Logo';
 
     // Append the image to the logo circle
