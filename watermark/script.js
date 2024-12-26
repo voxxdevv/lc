@@ -15,7 +15,7 @@
     logoCircle.style.height = '60px'; // Size of the circle
     logoCircle.style.backgroundColor = 'rgba(46, 46, 46, 0.8)';
     logoCircle.style.borderRadius = '50%';  // This makes it a circle
-    logoCircle.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.3)';
+    logoCircle.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5)';
     logoCircle.style.zIndex = '9999';
     logoCircle.style.display = 'flex';
     logoCircle.style.alignItems = 'center';
