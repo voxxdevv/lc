@@ -9,8 +9,8 @@
     logoImg.style.position = 'fixed';
     logoImg.style.bottom = '20px';  // Distance from the bottom
     logoImg.style.right = '20px';   // Distance from the right
-    logoImg.style.width = 'calc(40px + 2.2em)';   // Width of the image
-    logoImg.style.height = 'calc(40px + 2.2em)';  // Height of the image
+    logoImg.style.width = '20px';   // Width of the image
+    logoImg.style.height = '20px';  // Height of the image
     logoImg.style.opacity = '0.4';  // Set the opacity to 0.4
 
     // Append the image to the body of the page
