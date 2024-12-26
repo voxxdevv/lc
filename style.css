@@ -18,7 +18,7 @@
 }
 
 *:disabled {
-    background-color: rgba(62,62,62,0.8);
+    background-color: var(--card-background);
   background-blend-mode: multiply;
     color: var(--placeholder-color); /* Light gray for disabled color */
 opacity: 0.8;
