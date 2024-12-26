@@ -13,7 +13,7 @@
     logoCircle.style.right = '20px';
     logoCircle.style.width = '60px';  // Size of the circle
     logoCircle.style.height = '60px'; // Size of the circle
-    logoCircle.style.backgroundColor = '#ffffff';
+    logoCircle.style.backgroundColor = 'rgba(46, 46, 46, 0.8)';
     logoCircle.style.borderRadius = '50%';  // This makes it a circle
     logoCircle.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.3)';
     logoCircle.style.zIndex = '9999';
@@ -30,7 +30,7 @@
     // Style the logo image to fit within the circle
     logoImg.style.width = '50px';  // Adjust size of the logo
     logoImg.style.height = '50px'; // Adjust size of the logo
-    logoImg.style.objectFit = 'cover';  // Ensures the image fits within the circle
+    logoImg.style.objectFit = 'fill';  // Ensures the image fills the circle
 
     // Append the image to the circle
     logoCircle.appendChild(logoImg);
