@@ -98,7 +98,10 @@ a {
     }
 
 a:hover {
-  text-decoration: none;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        text-decoration: none;  
+     text-shadow: none;
   background: linear-gradient(-190deg, #8ab4ff, #2f78f5); 
    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3)); 
    transform: translateY(-2px);
