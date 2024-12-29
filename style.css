@@ -97,7 +97,7 @@ a {
     }
 
 a:hover {
-  background: linear-gradient(-190deg, #8ab4ff, #2f78f5); 
+  background: linear-gradient(-135deg, #8ab4ff, #2f78f5); 
           -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
         text-decoration: none;  
