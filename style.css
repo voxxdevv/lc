@@ -94,10 +94,14 @@ a {
         text-decoration: none;  
      text-shadow: none;
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
+        transition: background-image 0.3s, transform 0.2s;
     }
 
 a:hover {
   text-decoration: none;
+  background: linear-gradient(-190deg, #8ab4ff, #2f78f5); 
+   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3)); 
+   transform: translateY(-2px);
 }
 
 .container {
