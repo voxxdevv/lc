@@ -206,17 +206,69 @@ RidGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
 <script>
         console.log("Page watermarked by Loud Monkey Designs™. (Invisible)");
         
-        function toggleDefunct() {
-        const defunctDiv = document.querySelector('.defunct-websites');
-        const button = document.querySelector('.show-defunct-btn');
-        if (defunctDiv.style.display === 'none' || defunctDiv.style.display === '') {
-            defunctDiv.style.display = 'block';
-            button.innerHTML = 'Hide Defunct Websites <i class="fa-solid fa-eye-slash"></i>';
-        } else {
+function toggleDefunct() {
+    const defunctDiv = document.querySelector('.defunct-websites');
+    const button = document.querySelector('.show-defunct-btn');
+    
+    if (defunctDiv.style.height === '0px' || defunctDiv.style.height === '') {
+        // Show with slide down
+        defunctDiv.style.display = 'block';
+        defunctDiv.style.overflow = 'hidden';
+        const height = defunctDiv.scrollHeight + 'px';
+        
+        // Initial state
+        defunctDiv.style.height = '0';
+        defunctDiv.style.opacity = '0';
+        defunctDiv.style.transform = 'translateY(-20px)';
+        
+        // Force a reflow
+        defunctDiv.offsetHeight;
+        
+        // Transition to final state with 1s duration
+        defunctDiv.style.transition = 'height 1s ease, opacity 1s ease, transform 1s ease';
+        defunctDiv.style.height = height;
+        defunctDiv.style.opacity = '1';
+        defunctDiv.style.transform = 'translateY(0)';
+        
+        button.innerHTML = 'Hide Defunct Websites <i class="fa-solid fa-eye-slash"></i>';
+        
+        // Clean up after animation
+        defunctDiv.addEventListener('transitionend', function handler() {
+            defunctDiv.style.height = '';
+            defunctDiv.style.overflow = '';
+            defunctDiv.style.opacity = '';
+            defunctDiv.style.transform = '';
+            defunctDiv.removeEventListener('transitionend', handler);
+        }, { once: true });
+    } else {
+        // Hide with slide up
+        defunctDiv.style.overflow = 'hidden';
+        defunctDiv.style.height = defunctDiv.scrollHeight + 'px';
+        defunctDiv.style.opacity = '1';
+        defunctDiv.style.transform = 'translateY(0)';
+        
+        // Force a reflow
+        defunctDiv.offsetHeight;
+        
+        // Transition back to initial state with 1s duration
+        defunctDiv.style.transition = 'height 1s ease, opacity 1s ease, transform 1s ease';
+        defunctDiv.style.height = '0';
+        defunctDiv.style.opacity = '0';
+        defunctDiv.style.transform = 'translateY(-20px)';
+        
+        button.innerHTML = 'Show Defunct Websites <i class="fa-solid fa-eye"></i>';
+        
+        // Clean up after animation
+        defunctDiv.addEventListener('transitionend', function handler() {
             defunctDiv.style.display = 'none';
-            button.innerHTML = 'Show Defunct Websites <i class="fa-solid fa-eye"></i>';
-        }
+            defunctDiv.style.height = '';
+            defunctDiv.style.overflow = '';
+            defunctDiv.style.opacity = '';
+            defunctDiv.style.transform = '';
+            defunctDiv.removeEventListener('transitionend', handler);
+        }, { once: true });
     }
+}
 </script>
 </body>
 </html>
