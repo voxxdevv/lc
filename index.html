@@ -67,7 +67,7 @@ RidGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
 </button>
 </form>
 
-    <button class="show-defunct-btn" onclick="toggleDefunct()">Show Defunct Websites</button>
+    <button class="show-defunct-btn" onclick="toggleDefunct()">Show Defunct Websites <i class="fa-solid fa-eye"></i></button>
     
     <div class="defunct-websites">
         <form action="#">
@@ -211,10 +211,10 @@ RidGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
         const button = document.querySelector('.show-defunct-btn');
         if (defunctDiv.style.display === 'none' || defunctDiv.style.display === '') {
             defunctDiv.style.display = 'block';
-            button.textContent = 'Hide Defunct Websites';
+            button.textContent = 'Hide Defunct Websites <i class="fa-solid fa-eye-slash"></i>';
         } else {
             defunctDiv.style.display = 'none';
-            button.textContent = 'Show Defunct Websites';
+            button.textContent = 'Show Defunct Websites <i class="fa-solid fa-eye"></i>';
         }
     }
 </script>
