@@ -210,6 +210,15 @@ function toggleDefunct() {
     const defunctDiv = document.querySelector('.defunct-websites');
     const button = document.querySelector('.show-defunct-btn');
     
+    // Check if animation is already in progress
+    if (defunctDiv.classList.contains('animating')) return;
+    
+    // Add animating class to prevent multiple clicks
+    defunctDiv.classList.add('animating');
+    
+    // Disable button during animation
+    button.disabled = true;
+    
     if (defunctDiv.style.height === '0px' || defunctDiv.style.height === '') {
         // Show with slide down
         defunctDiv.style.display = 'block';
@@ -224,7 +233,7 @@ function toggleDefunct() {
         // Force a reflow
         defunctDiv.offsetHeight;
         
-        // Transition to final state with 1s duration
+        // Transition to final state
         defunctDiv.style.transition = 'height 1s ease, opacity 1s ease, transform 1s ease';
         defunctDiv.style.height = height;
         defunctDiv.style.opacity = '1';
@@ -238,6 +247,8 @@ function toggleDefunct() {
             defunctDiv.style.overflow = '';
             defunctDiv.style.opacity = '';
             defunctDiv.style.transform = '';
+            defunctDiv.classList.remove('animating');
+            button.disabled = false;
             defunctDiv.removeEventListener('transitionend', handler);
         }, { once: true });
     } else {
@@ -250,7 +261,7 @@ function toggleDefunct() {
         // Force a reflow
         defunctDiv.offsetHeight;
         
-        // Transition back to initial state with 1s duration
+        // Transition back to initial state
         defunctDiv.style.transition = 'height 1s ease, opacity 1s ease, transform 1s ease';
         defunctDiv.style.height = '0';
         defunctDiv.style.opacity = '0';
@@ -265,10 +276,17 @@ function toggleDefunct() {
             defunctDiv.style.overflow = '';
             defunctDiv.style.opacity = '';
             defunctDiv.style.transform = '';
+            defunctDiv.classList.remove('animating');
+            button.disabled = false;
             defunctDiv.removeEventListener('transitionend', handler);
         }, { once: true });
     }
 }
+
+// Optional: Add this CSS to your stylesheet
+// .animating {
+//     pointer-events: none; /* Optional: prevents clicks during animation */
+// }
 </script>
 </body>
 </html>
