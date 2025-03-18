@@ -126,7 +126,8 @@ a:hover {
 
 .defunct-websites {
     display: none;
-    animation: slideDown 1s ease-out;
+    transition: all 1s ease;
+    will-change: height, opacity, transform;
 }
 
 .header {
