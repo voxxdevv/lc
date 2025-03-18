@@ -209,84 +209,68 @@ RidGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
 function toggleDefunct() {
     const defunctDiv = document.querySelector('.defunct-websites');
     const button = document.querySelector('.show-defunct-btn');
+    const isHidden = defunctDiv.style.display === 'none' || defunctDiv.style.height === '0px' || !defunctDiv.style.height;
+
+    // Clear any existing transitions
+    defunctDiv.style.transition = 'none';
     
-    // Check if animation is already in progress
-    if (defunctDiv.classList.contains('animating')) return;
-    
-    // Add animating class to prevent multiple clicks
-    defunctDiv.classList.add('animating');
-    
-    // Disable button during animation
-    button.disabled = true;
-    
-    if (defunctDiv.style.height === '0px' || defunctDiv.style.height === '') {
-        // Show with slide down
+    if (isHidden) {
+        // SHOW animation
         defunctDiv.style.display = 'block';
         defunctDiv.style.overflow = 'hidden';
-        const height = defunctDiv.scrollHeight + 'px';
         
-        // Initial state
-        defunctDiv.style.height = '0';
+        const targetHeight = defunctDiv.scrollHeight + 'px';
+        
+        // Set initial states
+        defunctDiv.style.height = '0px';
         defunctDiv.style.opacity = '0';
         defunctDiv.style.transform = 'translateY(-20px)';
         
-        // Force a reflow
-        defunctDiv.offsetHeight;
+        // Force reflow
+        void defunctDiv.offsetHeight;
         
-        // Transition to final state
-        defunctDiv.style.transition = 'height 1s ease, opacity 1s ease, transform 1s ease';
-        defunctDiv.style.height = height;
+        // Apply transition and final states
+        defunctDiv.style.transition = 'all 1s ease';
+        defunctDiv.style.height = targetHeight;
         defunctDiv.style.opacity = '1';
         defunctDiv.style.transform = 'translateY(0)';
         
         button.innerHTML = 'Hide Defunct Websites <i class="fa-solid fa-eye-slash"></i>';
         
-        // Clean up after animation
-        defunctDiv.addEventListener('transitionend', function handler() {
-            defunctDiv.style.height = '';
-            defunctDiv.style.overflow = '';
-            defunctDiv.style.opacity = '';
-            defunctDiv.style.transform = '';
-            defunctDiv.classList.remove('animating');
-            button.disabled = false;
-            defunctDiv.removeEventListener('transitionend', handler);
+        // Cleanup
+        defunctDiv.addEventListener('transitionend', function cleanup() {
+            defunctDiv.style.removeProperty('height');
+            defunctDiv.style.removeProperty('overflow');
+            defunctDiv.style.removeProperty('transition');
+            defunctDiv.removeEventListener('transitionend', cleanup);
         }, { once: true });
+        
     } else {
-        // Hide with slide up
+        // HIDE animation
         defunctDiv.style.overflow = 'hidden';
         defunctDiv.style.height = defunctDiv.scrollHeight + 'px';
-        defunctDiv.style.opacity = '1';
-        defunctDiv.style.transform = 'translateY(0)';
         
-        // Force a reflow
-        defunctDiv.offsetHeight;
+        // Force reflow
+        void defunctDiv.offsetHeight;
         
-        // Transition back to initial state
-        defunctDiv.style.transition = 'height 1s ease, opacity 1s ease, transform 1s ease';
-        defunctDiv.style.height = '0';
+        // Apply transition and final states
+        defunctDiv.style.transition = 'all 1s ease';
+        defunctDiv.style.height = '0px';
         defunctDiv.style.opacity = '0';
         defunctDiv.style.transform = 'translateY(-20px)';
         
         button.innerHTML = 'Show Defunct Websites <i class="fa-solid fa-eye"></i>';
         
-        // Clean up after animation
-        defunctDiv.addEventListener('transitionend', function handler() {
+        // Cleanup
+        defunctDiv.addEventListener('transitionend', function cleanup() {
             defunctDiv.style.display = 'none';
-            defunctDiv.style.height = '';
-            defunctDiv.style.overflow = '';
-            defunctDiv.style.opacity = '';
-            defunctDiv.style.transform = '';
-            defunctDiv.classList.remove('animating');
-            button.disabled = false;
-            defunctDiv.removeEventListener('transitionend', handler);
+            defunctDiv.style.removeProperty('height');
+            defunctDiv.style.removeProperty('overflow');
+            defunctDiv.style.removeProperty('transition');
+            defunctDiv.removeEventListener('transitionend', cleanup);
         }, { once: true });
     }
 }
-
-// Optional: Add this CSS to your stylesheet
-// .animating {
-//     pointer-events: none; /* Optional: prevents clicks during animation */
-// }
 </script>
 </body>
 </html>
