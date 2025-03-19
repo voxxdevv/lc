@@ -76,7 +76,7 @@ h6 {
     -webkit-background-clip: text;  /* Clip the background gradient to the text */
     -webkit-text-fill-color: transparent; /* Make the text transparent so the background shows through */
     display: inline-block; /* Ensure the icon behaves like an inline block */
-    font-size: 1.1em; /* Set icon size */
+    font-size: 1.1rem; /* Set icon size */
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
         padding: 20px;
     border-radius: 50%;
@@ -181,7 +181,7 @@ h1 {
     -webkit-text-fill-color: transparent;    
     margin-bottom: 20px;
     margin-top: 0px;
-    font-size: 2em;
+    font-size: 2rem;
     animation: slideDown 1s ease-out;
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
 }
@@ -195,7 +195,7 @@ h1 {
     border: none;
     border-radius: 30px;
     color: var(--card-background);
-    font-size: 1.1em;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background-image 0.3s, transform 0.2s;
      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
@@ -211,7 +211,7 @@ button {
     border: none;
     border-radius: 30px;
     color: var(--text-color); /* White text */
-    font-size: 1.1em;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: background-image 0.3s, transform 0.2s;
      text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Slight blurred shadow */
@@ -240,7 +240,7 @@ button:disabled:hover {
     backdrop-filter: blur(10px);
     border: none;
     border-radius: 30px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     cursor: pointer;
     transform: translateY(0px);
      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
@@ -258,7 +258,7 @@ button:disabled:hover {
 }
 
 .socialbutton {
-    font-size: 1.1em; /* Controls the size of the icon */
+    font-size: 1.1rem; /* Controls the size of the icon */
     margin: 0;
     display: inline-flex;
     background: linear-gradient(rgba(46, 46, 46, 0.8), rgba(46, 46, 46, 0.8)) padding-box,
@@ -273,8 +273,8 @@ button:disabled:hover {
     align-items: center; /* Centers content vertically */
     text-align: center; /* Centers the text horizontally */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
-    width: calc(40px + 1.1em); /* Uniform width */
-    height: calc(40px + 1.1em); /* Uniform height */
+    width: calc(40px + 1.1rem); /* Uniform width */
+    height: calc(40px + 1.1rem); /* Uniform height */
     box-sizing: border-box; /* Ensure border is included in the size */
 }
 
