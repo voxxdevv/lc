@@ -58,51 +58,6 @@ RidGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
         <h6>A tool to check content for AI involvement. <i class="fa-solid fa-brain"></i></h6>
 </button>
 </form>
-
-<form action="https://ushrsim.netlify.app/" target="_blank">
-        <button>U.S. House of Representatives Simulator <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>A realistic U.S. House of Representatives simulator. <i class="fa-solid fa-scale-balanced"></i></h6>
-</button>
-</form>
-
-
-<form action="https://usegenpass.netlify.app" target="_blank">
-        <button>GenPass <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>A sleek password generator. <i class="fa-regular fa-square-plus"></i></h6>
-</button>
-</form>
-
-    <button class="show-defunct-btn" onclick="toggleDefunct()">Show Defunct Websites <i class="fa-solid fa-eye"></i></button>
-    
-    <div class="defunct-websites">
-        <form action="#">
-            <button disabled>
-                Songify <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <h6>This website is currently defunct. <i class="fa-solid fa-triangle-exclamation"></i></h6>
-            </button>
-        </form>
-        
-        <form action="#">
-            <button disabled>
-                FindOut Search (or FOS) <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <h6>This website is currently defunct. <i class="fa-solid fa-triangle-exclamation"></i></h6>
-            </button>
-        </form>
-
-        <form action="#">
-            <button disabled>
-                iPhone 16 Pro Max Emulator <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <h6>This website is currently defunct. <i class="fa-solid fa-triangle-exclamation"></i></h6>
-            </button>
-        </form>
-
-        <form action="#">
-            <button disabled>
-                Aerial View Flight Simulator (or AVFS) <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <h6>This website is currently defunct. <i class="fa-solid fa-triangle-exclamation"></i></h6>
-            </button>
-        </form>
-    </div>
 </div>
       <div class="container">
 
@@ -208,72 +163,6 @@ RidGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
 document.addEventListener("DOMContentLoaded", function() {
         console.log("Page watermarked by Loud Monkey Designs™. (Invisible)");
     });
-        
-function toggleDefunct() {
-    const defunctDiv = document.querySelector('.defunct-websites');
-    const button = document.querySelector('.show-defunct-btn');
-    const isHidden = defunctDiv.style.display === 'none' || defunctDiv.style.height === '0px' || !defunctDiv.style.height;
-
-    // Clear any existing transitions
-    defunctDiv.style.transition = 'none';
-    
-    if (isHidden) {
-        // SHOW animation
-        defunctDiv.style.display = 'block';
-        defunctDiv.style.overflow = 'hidden';
-        
-        const targetHeight = defunctDiv.scrollHeight + 'px';
-        
-        // Set initial states
-        defunctDiv.style.height = '0px';
-        defunctDiv.style.opacity = '0';
-        defunctDiv.style.transform = 'translateY(-20px)';
-        
-        // Force reflow
-        void defunctDiv.offsetHeight;
-        
-        // Apply transition and final states
-        defunctDiv.style.transition = 'all 1s ease';
-        defunctDiv.style.height = targetHeight;
-        defunctDiv.style.opacity = '1';
-        defunctDiv.style.transform = 'translateY(0)';
-        
-        button.innerHTML = 'Hide Defunct Websites <i class="fa-solid fa-eye-slash"></i>';
-        
-        // Cleanup
-        defunctDiv.addEventListener('transitionend', function cleanup() {
-            defunctDiv.style.removeProperty('height');
-            defunctDiv.style.removeProperty('overflow');
-            defunctDiv.style.removeProperty('transition');
-            defunctDiv.removeEventListener('transitionend', cleanup);
-        }, { once: true });
-        
-    } else {
-        // HIDE animation
-        defunctDiv.style.overflow = 'hidden';
-        defunctDiv.style.height = defunctDiv.scrollHeight + 'px';
-        
-        // Force reflow
-        void defunctDiv.offsetHeight;
-        
-        // Apply transition and final states
-        defunctDiv.style.transition = 'all 1s ease';
-        defunctDiv.style.height = '0px';
-        defunctDiv.style.opacity = '0';
-        defunctDiv.style.transform = 'translateY(-20px)';
-        
-        button.innerHTML = 'Show Defunct Websites <i class="fa-solid fa-eye"></i>';
-        
-        // Cleanup
-        defunctDiv.addEventListener('transitionend', function cleanup() {
-            defunctDiv.style.display = 'none';
-            defunctDiv.style.removeProperty('height');
-            defunctDiv.style.removeProperty('overflow');
-            defunctDiv.style.removeProperty('transition');
-            defunctDiv.removeEventListener('transitionend', cleanup);
-        }, { once: true });
-    }
-}
 </script>
 </body>
 </html>
