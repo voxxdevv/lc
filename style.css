@@ -70,21 +70,10 @@ h6 {
         -webkit-text-fill-color: transparent;          
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
 }
-/* Initial state of the icon with a default gradient */
-.fa-gradient {
-    background-image: linear-gradient(-135deg, hotpink, limegreen); /* Default gradient */
-    -webkit-background-clip: text;  /* Clip the background gradient to the text */
-    -webkit-text-fill-color: transparent; /* Make the text transparent so the background shows through */
-    display: inline-block; /* Ensure the icon behaves like an inline block */
-    font-size: 1.1rem; /* Set icon size */
-     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
-        padding: 20px;
-    border-radius: 50%;
-}
 
 /* When the button is hovered, change the gradient of the icon */
-.socialbutton:hover .fa-gradient {
-    background-image: linear-gradient(-135deg, var(--text-color), var(--text-color)); /* New gradient on hover */
+.socialbutton:hover .lm-text-theme {
+    background: linear-gradient(-135deg, var(--text-color), var(--text-color)); /* New gradient on hover */
 }
 
 a {
