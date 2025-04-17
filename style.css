@@ -69,11 +69,14 @@ h6 {
           -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;          
      filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5)); /* Slight blurred shadow */
+transition: all 0.3s ease;
 }
 
 /* When the button is hovered, change the gradient of the icon */
 .socialbutton:hover .lm-text-theme {
     background: linear-gradient(-135deg, var(--text-color), var(--text-color)); /* New gradient on hover */
+          -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;          
 }
 
 a {
@@ -111,12 +114,6 @@ a:hover {
     width: 100%;
     max-width: 600px;
     animation: fadeIn 1s ease-in-out;
-}
-
-.defunct-websites {
-    display: none;
-    transition: all 1s ease;
-    will-change: height, opacity, transform;
 }
 
 .header {
