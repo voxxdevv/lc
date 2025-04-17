@@ -258,7 +258,6 @@ button:disabled:hover {
 }
 
 .socialbutton {
-    font-size: 1.1rem; /* Controls the size of the icon */
     margin: 0;
     display: inline-flex;
     background: linear-gradient(rgba(46, 46, 46, 0.8), rgba(46, 46, 46, 0.8)) padding-box,
@@ -266,15 +265,13 @@ button:disabled:hover {
     backdrop-filter: blur(10px);
     text-shadow: none;
     border: 2px solid transparent;
-    border-radius: 50%; /* Ensures circular shape */
-    padding: 0; /* Inner spacing */
+    border-radius: 30px; /* Ensures circular shape */
+    padding: 20px; /* Inner spacing */
     display: flex; /* Enables flexbox */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     text-align: center; /* Centers the text horizontally */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
-    width: calc(40px + 1.1rem); /* Uniform width */
-    height: calc(40px + 1.1rem); /* Uniform height */
     box-sizing: border-box; /* Ensure border is included in the size */
 }
 
