@@ -44,6 +44,13 @@
 </form>
 </div>
 
+      <div class="socialcontainer">
+
+  <button class="socialbutton" id="share-button"><i class="fa-solid fa-share"></i></button>
+
+</form>
+</div>
+
 <div class="footer">
 
         <h6 class="info-section">
@@ -54,6 +61,26 @@
         </h6>
 
 </div>
+
+  <script>
+    const shareButton = document.getElementById('share-button');
+
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: 'Loud Monkey Designs™ • @voxxdevv',
+            url: window.location.href,
+          });
+        } catch (error) {
+          console.error('Sharing failed:', error);
+        }
+      } else {
+        alert('Sharing not supported on this browser.');
+      }
+    });
+  </script>
 
 </body>
 </html>
