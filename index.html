@@ -163,14 +163,13 @@ Xcode Web CLT <i class="fa-solid fa-arrow-up-right-from-square"></i>
         try {
           await navigator.share({
             title: document.title,
-            text: 'Loud Monkey Designs™',
             url: window.location.href,
           });
         } catch (error) {
           console.error('Sharing failed:', error);
         }
       } else {
-        alert('Sharing not supported on this browser.');
+        alert('Your client is not supported.');
       }
     });
   </script>
