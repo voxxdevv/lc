@@ -72,6 +72,10 @@ h6 {
 transition: all 0.3s ease;
 }
 
+.socialbutton .lm-text-theme {
+    animation: slideDown 1s ease-out;
+}
+
 /* When the button is hovered, change the gradient of the icon */
 .socialbutton:hover .lm-text-theme {
     background: linear-gradient(-135deg, var(--text-color), var(--text-color)); /* New gradient on hover */
@@ -260,7 +264,6 @@ button:disabled:hover {
     text-align: center; /* Centers the text horizontally */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.5);
     box-sizing: border-box; /* Ensure border is included in the size */
-    animation: slideUp 1s ease-out;
 }
 
 .socialbutton:hover {
@@ -296,9 +299,4 @@ button:disabled:hover {
 @keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
-}
-
-@keyframes slideUp {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-20px); opacity: 0; }
 }
