@@ -136,9 +136,11 @@ Xcode Web CLT <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
 <form action="https://x.com/voxxdevv" target="_blank">
         <button class="socialbutton"><span class="lm-text-theme">X (Twitter) <i class="fa-solid fa-arrow-up-right-from-square"></i></span></button>
+        
+  <button class="socialbutton" id="share-button"><span class="lm-text-theme"><i class="fa-solid fa-share"></i></span></button>
+
 </form>
 </div>
-
 
 <div class="footer">
 
@@ -150,6 +152,26 @@ Xcode Web CLT <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </h6>
 
 </div>
+
+  <script>
+    const shareButton = document.getElementById('share-button');
+
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            text: 'Loud Monkey Designs™ • @voxxdevv',
+            url: window.location.href,
+          });
+        } catch (error) {
+          console.error('Sharing failed:', error);
+        }
+      } else {
+        alert('Sharing not supported on this browser.');
+      }
+    });
+  </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
