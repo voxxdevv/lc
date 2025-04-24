@@ -414,10 +414,6 @@ padding: 0;
         header.scrolled {
             padding: 3rem;
         }
-		  .hero {
-		      height: calc(100vh + 3rem);
-		
-		}
 }
 
         /* Animations */
