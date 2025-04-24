@@ -10,9 +10,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
-            -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
         }
 
         html, body {
@@ -390,6 +387,7 @@ padding: 0;
         .footer-text {
             width: 100%;
             margin-top: 1rem;
+        			   margin-bottom: -0.5rem;
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
             text-align: center;
