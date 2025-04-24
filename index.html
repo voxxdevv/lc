@@ -14,120 +14,147 @@
     <link rel="manifest" href="/ico/site.webmanifest">
 
     <link rel="stylesheet" href="style.css">
-
-    <script src="https://kit.fontawesome.com/7eb79cf2e3.js" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="noise"></div>
+    
+    <header id="navbar">
+        <img class="logo" src="images/lmc.png" alt="Loud Monkey Designs™ Logo">
+    </header>
 
-<div class="header">
-
-<img src="images/lmc.png" alt="Loud Monkey Designs™ Logo" style="animation: slideDown 1s ease-out;background: none; border: none;border-radius: 0px; height: 5em; width: 5em; margin: 0 auto;margin-bottom: 20px; filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));">
-
-        <h1 style="margin-bottom:0px;margin-top:0px;text-align: center;"><b><span>Loud Monkey Designs™</span></b></h1>
-
-        <h6>A development team founded by <a href="/voxxdevv.html">@voxxdevv</a>. <i class="fa-solid fa-screwdriver-wrench"></i></h6>
-</div>
-
-
-      <div class="container">
-
-<h1 style="margin-bottom:0px">Websites <i class="fa-solid fa-chevron-down"></i></h1>
-<form action="https://usesignit.netlify.app/" target="_blank">
-        <button class="bestproject">
-SignIt <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>A service to sign and install IPA files. <i class="fa-solid fa-file-pen"></i></h6>
+    <section id="home" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
         
-<div style="box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);background:var(--card-background);border-radius: 30px;padding: 20px;margin-top: 20px;">
-<h6 style="background:linear-gradient(-60deg, #CD5E03, #F9FF90);          -webkit-background-clip: text;-webkit-text-fill-color: transparent;text-shadow: none;filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));padding: 0;">Best Website <i class="fa-solid fa-star"></i></h6>
-</div>
-</button>
-</form>
+        <div class="hero-content">
+            <h1><span class="highlight">Vibrant</span> & <span class="highlight">Bold</span> Digital Innovations</h1>
+            <p>Loud Monkey Designs™ is a cutting-edge development team founded by @voxxdevv that crafts vibrant, bold, and innovative projects.</p>
+            <a href="#projects" class="cta-btn">View Projects</a>
+        </div>
+    </section>
 
-<form action="https://xcclt.netlify.app" target="_blank">
-        <button>
-Xcode Web CLT <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>An unofficial Xcode CLT for the web. <i class="fa-solid fa-terminal"></i></h6>
-</button>
-</form>
-</div>
-      <div class="container">
+    <section id="projects" class="section portfolio">
+        <h2 class="section-title"><span class="alt-highlight">Projects</span></h2>
+        <div class="portfolio-grid">
 
-<h1 style="margin-bottom:0px">Shortcuts <i class="fa-solid fa-chevron-down"></i></h1>
+            <a href="https://usesignit.netlify.app" target="_blank">                    
+                <div class="service-card" style="--card-index:0"><span class="project-badge badge-website">Website</span>
+                    <h3>SignIt</h3>
+                    <p>A service to sign and install IPA files.</p>
 
-<form action="https://routinehub.co/shortcut/20473/" target="_blank">
-        <button class="bestproject">AskGPT <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>An all-in-one AI hub. <i class="fa-solid fa-robot"></i></h6>
-<div style="box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);background:var(--card-background);border-radius: 30px;padding: 20px;margin-top: 20px;">
-<h6 style="background:linear-gradient(-60deg, #CD5E03, #F9FF90);          -webkit-background-clip: text;-webkit-text-fill-color: transparent;text-shadow: none;filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));padding: 0;">Best Shortcut <i class="fa-solid fa-star"></i></h6>
-</div>
-</button>
-</form>
+                </div>
+            </a>
 
-<form action="https://routinehub.co/shortcut/20453/" target="_blank">
-        <button>RevokeGuard <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a href="https://xcclt.netlify.app" target="_blank">
+                <div class="service-card" style="--card-index:1">                    <span class="project-badge badge-website">Website</span>
+                    <h3>Xcode Web CLT</h3>
+                    <p>An unofficial Xcode CLT for the web.</p>
 
-        <h6>A utility to block revocations during sideloading. <i class="fa-solid fa-road-barrier"></i></h6>
-</button>
-</form>
+                </div>
+            </a>
 
-<form action="https://routinehub.co/shortcut/20461/" target="_blank">
-        <button>Device Jailbreak Checker <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>An advanced device jailbreak checker. <i class="fa-solid fa-mobile-screen-button"></i></h6>
-</button>
-</form>
+            <a href="https://routinehub.co/shortcut/20473/" target="_blank">
+                <div class="service-card" style="--card-index:2">                    <span class="project-badge badge-ios">iOS Shortcut</span>
+                    <h3>AskGPT</h3>
+                    <p>An all-in-one AI hub.</p>
+                </div>
+            </a>
 
-<form action="https://routinehub.co/shortcut/20469/" target="_blank">
-        <button>Background Remover <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <h6>An easy-to-use background remover. <i class="fa-regular fa-images"></i></h6>
-</button>
+            <a href="https://routinehub.co/shortcut/20453/" target="_blank">                    
+                <div class="service-card" style="--card-index:3">                    <span class="project-badge badge-ios">iOS Shortcut</span>
+                    <h3>RevokeGuard</h3>
+                    <p>A utility to block revocations during sideloading.</p>
 
-</form>
-</div>
+                </div>
+            </a>
 
+            <a href="https://routinehub.co/shortcut/20461/" target="_blank">                   
+                <div class="service-card" style="--card-index:4">                    <span class="project-badge badge-ios">iOS Shortcut</span>
+                    <h3>Device Jailbreak Checker</h3>
+                    <p>An advanced device jailbreak checker.</p>
 
-</div>
-      <div class="socialcontainer">
+                </div>
+            </a>
 
-<form action="https://github.com/voxxdevv" target="_blank">
-        <button class="socialbutton"><span class="lm-text-theme">GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></span></button>
-</form>
+            <a href="https://routinehub.co/shortcut/20469/" target="_blank">                    
+                <div class="service-card" style="--card-index:5"><span class="project-badge badge-ios">iOS Shortcut</span>
+                    <h3>Background Remover</h3>
+                    <p>An easy-to-use background remover.</p>
 
-<form action="https://routinehub.co/user/voxxdevv" target="_blank">
-        <button class="socialbutton"><span class="lm-text-theme">RoutineHub <i class="fa-solid fa-arrow-up-right-from-square"></i></span></button>
-</form>
+                </div>
+            </a>
+        </div>
+    </section>
 
-<form action="http://discordapp.com/users/1362599218719756361" target="_blank">
-        <button class="socialbutton"><span class="lm-text-theme">Discord <i class="fa-solid fa-arrow-up-right-from-square"></i></span></button>
-</form>
-          
-<form action="https://tiktok.com/@voxxdevv" target="_blank">
-        <button class="socialbutton"><span class="lm-text-theme">TikTok <i class="fa-solid fa-arrow-up-right-from-square"></i></span></button>
-</form>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Loud Monkey Designs™</div>
+            <div class="footer-links">
+                 <span class="project-badge badge-socials">Platforms</span><a href="https://github.com/voxxdevv" target="_blank" style="--link-index:0">GitHub</a>
+                <a href="https://routinehub.co/user/voxxdevv" target="_blank" style="--link-index:1">RoutineHub</a>
+                <a href="http://discordapp.com/users/1362599218719756361" target="_blank" style="--link-index:2">Discord</a>
+                <a href="https://tiktok.com/@voxxdevv" target="_blank" style="--link-index:3">TikTok</a>
+                <a href="https://x.com/voxxdevv" target="_blank" style="--link-index:4">X (Twitter)</a>
+                <span class="project-badge badge-misc">Misc.</span><a href="http://forms.gle/yk6g9SmfjwzvSPpN8" target="_blank" style="--link-index:5">Report A Problem</a>   <a id="share-link" style="--link-index:6">Share This Page</a>   
+            </div>
+        </div>
+        <p class="footer-text">Copyright © 2021-<script>document.write(new Date().getFullYear());</script>, Loud Monkey Designs. All rights reserved.</p>
+    </footer>
 
-<form action="https://x.com/voxxdevv" target="_blank">
-        <button class="socialbutton"><span class="lm-text-theme">X (Twitter) <i class="fa-solid fa-arrow-up-right-from-square"></i></span></button>
-</form>
-
-<form action="javascript:void(0);">
-  <button style="border-radius: 50%;aspect-ratio: 1 / 1;" class="socialbutton" id="share-button"><span class="lm-text-theme"><i class="fa-solid fa-share"></i></span></button>
-</form>
-
-</div>
-
-<div class="footer">
-
-        <h6 class="info-section">
-            Report a problem by clicking <b><a href="http://forms.gle/yk6g9SmfjwzvSPpN8" target="_blank">here</a></b>. <i class="fa-solid fa-flag"></i>
-        </h6>
-        <h6 class="copyright">
-            Copyright © 2021-<script>document.write(new Date().getFullYear());</script>, <b><span class="lm-text-theme" style="text-shadow: none;">Loud Monkey Designs</span></b>. All rights reserved. <i class="fa-solid fa-gavel"></i>
-        </h6>
-
-</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 97,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animate elements when they come into view
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.style.animationDelay = '0.2s';
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+document.querySelectorAll('.section-title').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+});
+        });
+    </script>
 
   <script>
-    const shareButton = document.getElementById('share-button');
+    const shareButton = document.getElementById('share-link');
 
     shareButton.addEventListener('click', async () => {
       if (navigator.share) {
