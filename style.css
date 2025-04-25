@@ -384,6 +384,28 @@ padding: 0;
     transition: width 0.3s ease;
 }
 
+.alt-a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
+            position: relative;
+        }
+
+.alt-a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--hot-pink);
+    transition: width 0.3s ease;
+}
+
         .footer-links a:hover {
             color: var(--lime);
         }
