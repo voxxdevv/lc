@@ -370,7 +370,7 @@ a:hover {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(-90deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
     z-index: -1;
 }
 
@@ -384,7 +384,7 @@ a:hover {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--lime), var(--hot-pink));
+    background: linear-gradient(-90deg, var(--lime), var(--hot-pink));
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
