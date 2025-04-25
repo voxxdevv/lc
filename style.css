@@ -91,7 +91,7 @@ header.scrolled .logo {
     height: 1px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(90deg, 
+    background: linear-gradient(-90deg, 
         rgba(255, 255, 255, 0),
         rgba(50, 205, 50, 0.3),
         rgba(255, 105, 180, 0.3),
@@ -378,10 +378,12 @@ a:hover {
     content: '';
     position: absolute;
     height: 2px;
-    border-radius: 2px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
     width: 0;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background: linear-gradient(90deg, var(--lime), var(--hot-pink));
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
