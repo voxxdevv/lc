@@ -18,7 +18,7 @@
 }
 
 html, body {
-    background: rgba(0, 0, 0, 0.3);
+    background-color: var(--dark);
     color: var(--light);
     overflow-x: hidden;
     max-width: 100%;
@@ -28,7 +28,6 @@ html, body {
 
 header {
     position: fixed;
-    background: var(--dark);
 	 margin-bottom: 10px;
     width: 100%;
     top: 0;
