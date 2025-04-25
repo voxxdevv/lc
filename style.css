@@ -68,7 +68,7 @@ header.scrolled {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-header.scrolled::after {
+header.scrolled::before {
     content: '';
     position: absolute;
     width: 0;
