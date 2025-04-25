@@ -73,7 +73,6 @@ header.scrolled .logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
     padding: 0 2.5rem;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
