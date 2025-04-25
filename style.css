@@ -311,7 +311,7 @@ padding: 0;
             border: 1px solid var(--hot-pink);
         }
 
-        .badge-socials {
+        .badge-platforms {
             background-color: rgba(50, 205, 50, 0.2);
             color: var(--lime);
             border: 1px solid var(--lime);
