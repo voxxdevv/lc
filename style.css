@@ -395,7 +395,7 @@ a:hover {
 }
 
 .service-card:hover::after {
-    width: 50%;
+    width: 75%;
 }
 
 .service-card h3 {
