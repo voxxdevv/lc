@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loud Monkey Designs™</title>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/ico/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/ico/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
+    <link rel="icon" href="/ico/favicon.ico">
+    <link rel="manifest" href="/ico/site.webmanifest">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise"></div>
+    
+    <header id="navbar">
+        <img class="logo" src="images/lmc.png" alt="Loud Monkey Designs™ Logo">
+    </header>
+
+    <section id="home" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="hero-content">
+            <h1>@<span class="highlight">voxxdevv</span></h1>
+            <a href="#platforms" class="cta-btn">View More</a>
+        </div>
+    </section>
+
+    <section id="platforms" class="section portfolio">
+        <h2 class="section-title"><span class="alt-highlight">Platforms</span></h2>
+        <div class="portfolio-grid">
+
+            <a href="https://github.com/voxxdevv" target="_blank">                    
+                <div class="service-card" style="--card-index:0">
+                    <h3>GitHub</h3>
+                    <p>View @voxxdevv on GitHub.</p>
+
+                </div>
+            </a>
+            
+                        <a href="https://routinehub.co/user/voxxdevv" target="_blank">                    
+                <div class="service-card" style="--card-index:1">
+                    <h3>RoutineHub</h3>
+                    <p>View @voxxdevv on RoutineHub.</p>
+
+                </div>
+            </a>
+
+                        <a href="http://discordapp.com/users/1362599218719756361" target="_blank">                    
+                <div class="service-card" style="--card-index:2">
+                    <h3>Discord</h3>
+                    <p>View @vxxdvv (@voxxdevv) on Discord.</p>
+
+                </div>
+            </a>
+            
+                        <a href="https://tiktok.com/@voxxdevv" target="_blank">                    
+                <div class="service-card" style="--card-index:3">
+                    <h3>TikTok</h3>
+                    <p>View @voxxdevv on TikTok.</p>
+
+                </div>
+            </a>
+
+                        <a href="https://x.com/voxxdevv" target="_blank">                    
+                <div class="service-card" style="--card-index:4">
+                    <h3>X (Twitter)</h3>
+                    <p>View @voxxdevv on X (Twitter).</p>
+
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Loud Monkey Designs™</div>
+            <div class="footer-links">
+                <span class="project-badge badge-misc">Misc.</span><a href="http://forms.gle/yk6g9SmfjwzvSPpN8" target="_blank" style="--link-index:5">Report A Problem</a>   <a id="share-link" style="--link-index:6">Share This Page</a>   
+            </div>
+        </div>
+        <p class="footer-text">Copyright © 2021-<script>document.write(new Date().getFullYear());</script>, Loud Monkey Designs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 97,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animate elements when they come into view
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.style.animationDelay = '0.2s';
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+document.querySelectorAll('.section-title').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+});
+        });
+    </script>
+
+  <script>
+    const shareButton = document.getElementById('share-link');
+
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            url: window.location.href,
+          });
+        } catch (error) {
+          console.error('Sharing failed:', error);
+        }
+      } else {
+        alert('Your client is not supported.');
+      }
+    });
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+        console.log("Page watermarked by Loud Monkey Designs™. (Invisible)");
+    });
+</script>
+</body>
+</html>
