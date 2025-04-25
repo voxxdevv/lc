@@ -462,8 +462,8 @@ a:hover {
 }
 
 .badge-platforms:hover {
-    background-color: rgba(50, 205, 50, 0.3);
-    transform: translateY(-2px);
+    background-color: rgba(50, 205, 50, 0.2);
+    transform: none;
 }
 
 .badge-misc {
@@ -474,8 +474,8 @@ a:hover {
 }
 
 .badge-misc:hover {
-    background-color: rgba(255, 105, 180, 0.3);
-    transform: translateY(-2px);
+    background-color: rgba(50, 205, 50, 0.2);
+    transform: none;
 }
 
 footer {
