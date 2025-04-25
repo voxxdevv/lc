@@ -406,6 +406,14 @@ padding: 0;
     transition: width 0.3s ease;
 }
 
+        .alt-a:hover {
+            color: var(--lime);
+        }
+
+        .alt-a:hover::after {
+            width: 100%;
+        }
+
         .footer-links a:hover {
             color: var(--lime);
         }
