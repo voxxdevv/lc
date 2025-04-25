@@ -10,6 +10,9 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
+            -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
         }
 
         html, body {
@@ -34,20 +37,24 @@
 
         header {
             position: fixed;
-            width: 100%;
+            width: 65px;
+				height: 65px;
             top: 0;
-            padding: 1rem 5%;
+				right: 0;
+            padding: 3rem;
             display: flex;
             justify-content: center;
+            border-bottom-left-radius: 30px;
             align-items: center;
             backdrop-filter: blur(10px);
             z-index: 1000000;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
         header.scrolled {
-            padding: 1rem 0;
+            padding: 3rem;
             background-color: rgba(19, 19, 19, 0.9);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
@@ -289,6 +296,7 @@ padding: 0;
     margin-bottom: 1rem;
     width: auto; /* This ensures width is based on content */
     max-width: fit-content; /* Optional safeguard */
+            animation: fadeIn 1s ease forwards;
 }
 
         .badge-website {
@@ -351,7 +359,7 @@ padding: 0;
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: center;         
         }
 
         .footer-links a {
@@ -387,34 +395,13 @@ padding: 0;
         .footer-text {
             width: 100%;
             margin-top: 1rem;
+            margin-bottom: -0.5rem;
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
             text-align: center;
             opacity: 0;
             animation: fadeIn 1s ease forwards 1s;
         }
-@media screen and (orientation: landscape) {
-        header {
-            position: fixed;
-            width: 65px;
-				height: 65px;
-            top: 0;
-				right: 0;
-            padding: 3rem;
-            display: flex;
-            justify-content: center;
-            border-bottom-left-radius: 30px;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            z-index: 1000000;
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-        header.scrolled {
-            padding: 3rem;
-        }
-}
 
         /* Animations */
         @keyframes floatBlob {
