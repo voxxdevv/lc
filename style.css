@@ -171,7 +171,7 @@ header.scrolled .logo {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
-    line-height: 1.6;
+    line-height: 1.5;
     animation: fadeIn 1.5s ease forwards 0.6s;
     opacity: 0;
 }
@@ -366,21 +366,16 @@ a:hover {
 }
 
 .service-card:hover {
+    padding-top: calc(1.5rem + 3px);
     transform: translateY(-10px) scale(1.02);
     border-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 15px 35px rgba(50, 205, 50, 0.15);
 }
 
-.service-card h3 {
-    position: relative;
-    width: fit-content; /* Explicitly set width to content */
-    margin: 0; /* Remove default margins */
-}
-
 .service-card h3::after {
     content: '';
     position: absolute;
-    width: 0;
+    width: 100%;
     border-radius: 1px;
     height: 1px;
     bottom: 0;
@@ -389,38 +384,29 @@ a:hover {
     transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.service-card h3:hover {
-    padding-bottom: 2px;
-}
-
-.service-card h3:hover::after {
-    width: 100%; /* Now 100% of the h3's width which is fit-content */
-}
-
-h3:hover::after {
-    width: 100%; /* Now 100% of the h3's width which is only as wide as the text */
-}
-
 .service-card h3 {
     font-size: 1.5rem;
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     color: var(--lime);
     position: relative;
     display: inline-block;
     padding: 0;
     transition: all 0.3s ease;
+    padding-bottom: 2px;
+    position: relative;
+    width: fit-content; /* Explicitly set width to content */
 }
 
 .service-card p {
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
     padding: 0;
 }
 
 .project-badge {
     display: inline-block;
-    padding: 4px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 700;
@@ -441,8 +427,8 @@ h3:hover::after {
 
 .badge-website:hover {
     background-color: rgba(50, 205, 50, 0.3);
-    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
+    margin-bottom: calc(1rem + 3px);
 }
 
 .badge-ios {
@@ -453,8 +439,8 @@ h3:hover::after {
 
 .badge-ios:hover {
     background-color: rgba(255, 105, 180, 0.3);
-    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    margin-bottom: calc(1rem + 3px);
 }
 
 .badge-platforms {
@@ -484,23 +470,24 @@ h3:hover::after {
 /* Project badges */
 .service-card:hover .badge-website {
     background-color: rgba(50, 205, 50, 0.3);
-    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
+    margin-bottom: calc(1rem + 3px);
 }
 
 .service-card:hover .badge-ios {
     background-color: rgba(255, 105, 180, 0.3);
-    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    margin-bottom: calc(1rem + 3px);
 }
 
 /* H3 animation when service card is hovered */
 .service-card:hover h3 {
-    padding-bottom: 2px;
+    color: var(--light);
+    margin-bottom: calc(1rem - 3px);
 }
 
 .service-card:hover h3::after {
-    width: 100%;
+    width: 0;
 }
 
 footer {
