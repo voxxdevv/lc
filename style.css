@@ -28,28 +28,30 @@ html, body {
 
 header {
     position: fixed;
-    width: 65px;
-    height: 65px;
+	 margin-bottom: 10px;
+    width: 100%;
     top: 0;
     right: 0;
     padding: 3rem;
     display: flex;
     justify-content: center;
-    border-bottom-left-radius: 30px;
     align-items: center;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000000;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-header.scrolled {
-    padding: 3rem;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: rgba(19, 19, 19, 0.9);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
+
+header.scrolled {
+    padding: 2.65rem;
+    backdrop-filter: blur(10px);
+    background: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
 
 .logo {
     height: 65px;
@@ -58,7 +60,7 @@ header.scrolled {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 header.scrolled .logo {
@@ -66,11 +68,15 @@ header.scrolled .logo {
 }
 
 .hero {
-    height: 100vh;
+    margin-top: 6rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 5%;
+    align-items:center;
+    padding: 0 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     position: relative;
     overflow: hidden;
 }
@@ -102,16 +108,17 @@ header.scrolled .logo {
 .hero h1 {
     font-size: 3rem;
     line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     font-weight: 900;
     position: relative;
+    padding: 0;
 }
 
 .highlight {
     color: var(--lime);
     display: inline-block;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 1s ease;
 }
 
 .highlight::after {
@@ -124,7 +131,7 @@ header.scrolled .logo {
     left: 0;
     z-index: -1;
     transform: skewX(-15deg);
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
 .highlight:hover {
@@ -141,7 +148,7 @@ header.scrolled .logo {
     color: var(--hot-pink);
     display: inline-block;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 1s ease;
 }
 
 .alt-highlight::after {
@@ -154,7 +161,7 @@ header.scrolled .logo {
     left: 0;
     z-index: -1;
     transform: skewX(15deg);
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
 .alt-highlight:hover {
@@ -169,53 +176,13 @@ header.scrolled .logo {
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0;
     max-width: 600px;
     line-height: 1.5;
     animation: fadeIn 1.5s ease forwards 0.6s;
     opacity: 0;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--hot-pink);
-    color: var(--light);
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 50px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 5px 25px rgba(255, 105, 180, 0.4);
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 1s ease forwards 0.9s;
-}
-
-.cta-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: all 0.6s ease;
-}
-
-.cta-btn:hover {
-    background: var(--lime);
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 30px var(--lime-glow);
-}
-
-.cta-btn:hover::before {
-    left: 100%;
-    animation: shimmer 1.5s infinite;
 }
 
 /* Enhanced Blob animations */
@@ -341,7 +308,7 @@ a:hover {
     background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 30px;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.05);
     overflow: hidden;
@@ -370,6 +337,7 @@ a:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 15px 35px rgba(50, 205, 50, 0.15);
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
 .service-card h3::after {
@@ -381,7 +349,7 @@ a:hover {
     bottom: 0;
     left: 0;
     background: var(--hot-pink);
-    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .service-card h3 {
@@ -392,7 +360,7 @@ a:hover {
     position: relative;
     display: inline-block;
     padding: 0;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
     padding-bottom: 2px;
     position: relative;
     width: fit-content; /* Explicitly set width to content */
@@ -416,7 +384,7 @@ a:hover {
     width: auto;
     max-width: fit-content;
     animation: fadeIn 1s ease forwards;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .badge-website {
@@ -570,7 +538,7 @@ footer::before {
 .footer-links a {
     color: var(--light);
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
@@ -588,13 +556,13 @@ footer::before {
     left: 50%;
     transform: translateX(-50%);
     background: var(--hot-pink);
-    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .alt-a {
     color: var(--hot-pink);
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     animation: fadeIn 1s ease forwards;
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
@@ -612,7 +580,7 @@ footer::before {
     left: 50%;
     transform: translateX(-50%);
     background: var(--lime);
-    transition: width 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .alt-a:hover {
