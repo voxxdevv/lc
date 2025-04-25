@@ -307,12 +307,12 @@ a:hover {
     content: '';
     position: absolute;
     width: 60px;
-    height: 3px;
+    height: 2px;
     background: linear-gradient(90deg, var(--lime), var(--hot-pink));
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 .portfolio {
@@ -373,7 +373,8 @@ a:hover {
 .service-card::after {
     content: '';
     position: absolute;
-    height: 3px;
+    height: 2px;
+    border-radius: 2px;
     width: 0;
     bottom: 0;
     left: 0;
@@ -565,6 +566,7 @@ footer::before {
     content: '';
     position: absolute;
     width: 0;
+    border-radius: 2px;
     height: 2px;
     bottom: 0;
     left: 50%;
@@ -587,6 +589,7 @@ footer::before {
 .alt-a::after {
     content: '';
     position: absolute;
+    border-radius: 2px;
     width: 0;
     height: 2px;
     bottom: 0;
