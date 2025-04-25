@@ -45,7 +45,7 @@ header {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-header::after {
+header::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -62,7 +62,7 @@ header::after {
 }
 
 header.scrolled {
-    padding: 2.65rem;
+    padding: 2.6rem;
     backdrop-filter: blur(10px);
     background: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
@@ -107,7 +107,7 @@ header.scrolled .logo {
     overflow: hidden;
 }
 
-.hero::after {
+.hero::before {
     content: '';
     position: absolute;
     width: 100%;
