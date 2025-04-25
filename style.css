@@ -410,13 +410,25 @@ a:hover {
 }
 
 .service-card:hover h3 {
-    transform: translateX(5px);
+    text-align: center;
 }
 
 .service-card p {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+}
+
+.service-card:hover p {
+    text-align: center;
+}
+
+.service-card .project-badge {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .project-badge {
+    justify-content: center;
 }
 
 .project-badge {
