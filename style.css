@@ -18,7 +18,7 @@
 }
 
 html, body {
-    background-color: var(--dark);
+    background-color: rgba(0, 0, 0, 0.3);
     color: var(--light);
     overflow-x: hidden;
     max-width: 100%;
@@ -27,6 +27,7 @@ html, body {
 }
 
 header {
+    background-color: var(--dark);
     position: fixed;
 	 margin-bottom: 10px;
     width: 100%;
@@ -41,14 +42,14 @@ header {
     z-index: 1000000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background-color: rgba(19, 19, 19, 0.9);
+    background-color: var(--dark);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 header.scrolled {
     padding: 2.65rem;
     backdrop-filter: blur(10px);
-    background: none;
+    background-color: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
