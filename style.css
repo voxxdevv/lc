@@ -15,7 +15,7 @@
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 html, body {
