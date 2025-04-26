@@ -758,19 +758,6 @@ footer::before {
         font-size: 2rem;
     }
     
-    .logo {
-        width: 60px;
-        height: 60px;
-    }
-    
-    header {
-        padding: 2.585rem;
-    }
-    
-    header.scrolled {
-        padding: 2.54rem;
-    }
-    
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
