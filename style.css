@@ -308,6 +308,7 @@ a:hover {
     background: rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    border-bottom: none;
 }
 
 .portfolio::before {
@@ -320,6 +321,10 @@ a:hover {
     background: linear-gradient(45deg, rgba(50, 205, 50, 0.03), rgba(255, 105, 180, 0.03));
     z-index: 0;
     pointer-events: none;
+}
+
+.portfolio::after {
+    content: none;
 }
 
 .portfolio-grid {
