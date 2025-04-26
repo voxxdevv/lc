@@ -163,6 +163,7 @@ header.scrolled .logo {
     z-index: -1;
     transform: skewX(-15deg);
     transition: all 1s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .highlight:hover {
@@ -173,7 +174,6 @@ header.scrolled .logo {
     height: 15px;
     background: var(--pink-glow);
     transform: skewX(-25deg) translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .alt-highlight {
