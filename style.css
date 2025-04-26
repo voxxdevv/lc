@@ -90,10 +90,12 @@ header.scrolled::before {
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
 }
 
 header.scrolled .logo {
     transform: translate(-50%, -50%) scale(0.9);
+    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
 
 .hero {
@@ -171,6 +173,7 @@ header.scrolled .logo {
     height: 15px;
     background: var(--pink-glow);
     transform: skewX(-25deg) translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .alt-highlight {
@@ -191,6 +194,7 @@ header.scrolled .logo {
     z-index: -1;
     transform: skewX(15deg);
     transition: all 1s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .alt-highlight:hover {
@@ -350,6 +354,7 @@ a:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .service-card::before {
@@ -416,6 +421,7 @@ a:hover {
     max-width: fit-content;
     animation: fadeIn 1s ease forwards;
     transition: all 1s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .badge-website {
