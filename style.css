@@ -280,7 +280,7 @@ header.scrolled .logo {
 .section {
     padding-top: 2.5rem;
     padding-right: 1rem;
-    padding-bottom: 2.5rem; /* Your desired value */
+    padding-bottom: 3rem; /* Your desired value */
     padding-left: 1rem;
     position: relative;
 }
