@@ -39,7 +39,19 @@
         
         
         <div class="portfolio-grid">
+<!-- index.html -->
+<div id="weblauncher-container">Loading...</div>
 
+<script>
+fetch('weblauncher.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('weblauncher-container').innerHTML = html;
+  })
+  .catch(err => {
+    console.error('Failed to load weblauncher:', err);
+  });
+</script>
             <a href="https://routinehub.co/shortcut/20473/" target="_blank">
                 <div class="service-card" style="--card-index:2">                    <span class="project-badge badge-ios">iOS Shortcut</span>
                     <h3>AskGPT</h3>
