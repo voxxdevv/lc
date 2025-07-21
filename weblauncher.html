@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loud Monkey Designs™ • WebLauncher</title>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/ico/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/ico/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
+    <link rel="icon" href="/ico/favicon.ico">
+    <link rel="manifest" href="/ico/site.webmanifest">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise"></div>
+    
+    <header id="navbar">
+   <a href="#home"> <img class="logo" src="images/lmc.png" alt="Loud Monkey Designs™ Logo"> </a>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        
+        <div class="hero-content">
+            <h1>Web<span class="highlight">Launcher</span></h1>
+            <p>Launch websites crafted by Loud Monkey Designs™.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section portfolio">
+            
+        <h2 class="section-title"><span class="alt-highlight">Websites</span></h2>
+        
+        
+        <div class="portfolio-grid">
+            
+                        <a href="https://usepaletteai.netlify.app" target="_blank">                    
+                <div class="service-card" style="--card-index:0">
+                    <h3>PaletteAI</h3>
+                    <p>Tap this button to launch PaletteAI.</p>
+                </div>
+            </a>
+            
+            <a href="https://endgpt.netlify.app" target="_blank">                    
+                <div class="service-card" style="--card-index:1">
+                    <h3>EndGPT</h3>
+                    <p>Tap this button to launch EndGPT.</p>
+
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Loud Monkey Designs™</div>
+            <div class="footer-links">
+                 <span class="project-badge badge-platforms">Platforms</span><a href="https://github.com/voxxdevv" target="_blank" style="--link-index:0">GitHub</a>
+                <a href="https://routinehub.co/user/voxxdevv" target="_blank" style="--link-index:1">RoutineHub</a>
+                <a href="http://discordapp.com/users/1362599218719756361" target="_blank" style="--link-index:2">Discord</a>
+                <a href="https://tiktok.com/@voxxdevv" target="_blank" style="--link-index:3">TikTok</a>
+                <a href="https://x.com/voxxdevv" target="_blank" style="--link-index:4">X (Twitter)</a>
+                <span class="project-badge badge-misc">Misc.</span><a href="http://forms.gle/yk6g9SmfjwzvSPpN8" target="_blank" style="--link-index:5">Report A Problem</a>   <a id="share-link" style="--link-index:6">Share This Page</a>   
+            </div>
+        </div>
+        <p class="footer-text">Copyright © 2021-<script>document.write(new Date().getFullYear());</script>, Loud Monkey Designs. All rights reserved.</p>
+    </footer>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header scroll effect
+            const header = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 97,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Animate elements when they come into view
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.style.animationDelay = '0.2s';
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+document.querySelectorAll('.section-title').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+});
+        });
+  </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hero = document.querySelector('.hero');
+    
+    // Create particle container
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles-container';
+    hero.appendChild(particlesContainer);
+    
+    // Generate more particles distributed across the hero
+    const particleCount = 40;
+    
+    for (let i = 0; i < particleCount; i++) {
+        createParticle(particlesContainer, i % 2 === 0 ? 'lime' : 'pink');
+    }
+    
+    function createParticle(container, type) {
+        const particle = document.createElement('div');
+        particle.className = `particle particle-${type}`;
+        
+        // Random positioning across the entire hero
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+        const size = Math.random() * 4 + 2;
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 10 + 10;
+        
+        // Random movement directions
+        const xMove = (Math.random() - 0.5) * 100;
+        const yMove = (Math.random() - 0.5) * 100;
+        
+        particle.style.left = `${left}%`;
+        particle.style.top = `${top}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        
+        // Set custom properties for the random movement
+        particle.style.setProperty('--x-move', `${xMove}px`);
+        particle.style.setProperty('--y-move', `${yMove}px`);
+        
+        container.appendChild(particle);
+        
+        // Create new particle when this one finishes its animation
+        particle.addEventListener('animationiteration', () => {
+            // Reposition particle randomly for the next iteration
+            const newLeft = Math.random() * 100;
+            const newTop = Math.random() * 100;
+            const newXMove = (Math.random() - 0.5) * 100;
+            const newYMove = (Math.random() - 0.5) * 100;
+            
+            particle.style.left = `${newLeft}%`;
+            particle.style.top = `${newTop}%`;
+            particle.style.setProperty('--x-move', `${newXMove}px`);
+            particle.style.setProperty('--y-move', `${newYMove}px`);
+        });
+    }
+});
+  </script>
+
+  <script>
+    const shareButton = document.getElementById('share-link');
+
+    shareButton.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: document.title,
+            url: window.location.href,
+          });
+        } catch (error) {
+          console.error('Sharing failed:', error);
+        }
+      } else {
+        alert('Your client is not supported.');
+      }
+    });
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+        console.log("Page watermarked by Loud Monkey Designs™. (Invisible)");
+    });
+</script>
+</body>
+</html>
