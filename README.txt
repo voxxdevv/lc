@@ -1,3 +1,3 @@
-THE CONTENT IN THIS REPOSITORY MAY NOT BE COPIED OR USED WITHOUT PERMISSION.
+The content in this repository may not be copied or used without permission.
 
-COPYRIGHT © 2021-2025 LOUD MONKEY DESIGNS. ALL RIGHTS RESERVED.
+Copyright © 2021-2025, Loud Monkey Designs. All rights reserved.
