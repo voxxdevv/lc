@@ -237,19 +237,78 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   </script>
 
+<!-- Add this to any page for auto-fullscreen modal -->
+<div id="autoModalOverlay" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+">
+    <iframe id="autoModalFrame" src="" style="
+        width: 90%;
+        height: 90%;
+        max-width: 600px;
+        max-height: 700px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    "></iframe>
+    <button onclick="closeAutoModal()" style="
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+    ">&times;</button>
+</div>
+
 <script>
+function closeAutoModal() {
+    const overlay = document.getElementById('autoModalOverlay');
+    const frame = document.getElementById('autoModalFrame');
+    
+    overlay.style.display = 'none';
+    frame.src = '';
+    document.body.style.overflow = '';
+}
+
+// Auto-show modal when page loads
 window.addEventListener('load', function() {
     setTimeout(function() {
-        const popup = window.open(
-            'logo-modal.html',
-            'logoModal',
-            'width=600,height=700,scrollbars=no,resizable=no,toolbar=no,menubar=no,location=no,status=no,centerscreen=yes'
-        );
+        const overlay = document.getElementById('autoModalOverlay');
+        const frame = document.getElementById('autoModalFrame');
         
-        if (popup) {
-            popup.focus();
-        }
-    }, 1500); // Shows after 1.5 seconds
+        frame.src = 'logo-modal.html';
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }, 2000); // Shows after 2 seconds
+});
+
+// Listen for close message from iframe
+window.addEventListener('message', function(e) {
+    if (e.data === 'closeModal') {
+        closeAutoModal();
+    }
+});
+
+// Close with ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('autoModalOverlay').style.display === 'flex') {
+        closeAutoModal();
+    }
 });
 </script>
 </body>
