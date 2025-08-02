@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
-    z-index: 999999;
+    z-index: 99999999999999999999;
     display: none;
     justify-content: center;
     align-items: center;
@@ -259,32 +259,8 @@ document.addEventListener('DOMContentLoaded', function() {
         border-radius: 20px;
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     "></iframe>
-    <button onclick="closeAutoModal()" style="
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border: none;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-        backdrop-filter: blur(10px);
-    ">&times;</button>
-</div>
 
 <script>
-function closeAutoModal() {
-    const overlay = document.getElementById('autoModalOverlay');
-    const frame = document.getElementById('autoModalFrame');
-    
-    overlay.style.display = 'none';
-    frame.src = '';
-    document.body.style.overflow = '';
-}
-
 // Auto-show modal when page loads
 window.addEventListener('load', function() {
     setTimeout(function() {
@@ -294,7 +270,7 @@ window.addEventListener('load', function() {
         frame.src = 'logo-modal.html';
         overlay.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-    }, 2000); // Shows after 2 seconds
+    }, 0); // Shows after 0 seconds
 });
 
 // Listen for close message from iframe
