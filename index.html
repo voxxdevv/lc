@@ -238,9 +238,19 @@ document.addEventListener('DOMContentLoaded', function() {
   </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-        console.log("Page watermarked by Loud Monkey Designs™. (Invisible)");
-    });
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const popup = window.open(
+            'logo-modal.html',
+            'logoModal',
+            'width=600,height=700,scrollbars=no,resizable=no,toolbar=no,menubar=no,location=no,status=no,centerscreen=yes'
+        );
+        
+        if (popup) {
+            popup.focus();
+        }
+    }, 1500); // Shows after 1.5 seconds
+});
 </script>
 </body>
 </html>
