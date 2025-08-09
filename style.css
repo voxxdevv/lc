@@ -379,31 +379,6 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
-.h3-sc {
-  position: relative;
-  display: inline-block;
-}
-
-.h3-sc::after {
-    content: '';
-    position: absolute;
-    height: 10px;
-    width: 0;
-    background: rgba(255, 105, 180, 0.2);
-    bottom: 5px;
-    left: 0;
-    transform: skewX(-15deg);
-    transition: width 1s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 1px;
-    z-index: -1;
-}
-
-.h3-sc:hover::after {
-    width: 100%;
-    background: var(--pink-glow);
-    transform: skewX(-25deg) translateY(-2px);
-}
 
 .service-card h3 {
     font-size: 1.5rem;
@@ -417,6 +392,36 @@ a:hover {
     padding-bottom: 2px;
     position: relative;
     width: fit-content; /* Explicitly set width to content */
+}
+
+.service-card h3.h3-sc {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    width: fit-content;
+    color: var(--lime);
+    transition: all 1s ease;
+}
+
+.service-card h3.h3-sc::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 105, 180, 0.2);
+    bottom: 5px;
+    left: 0;
+    transform: skewX(-15deg);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 1px;
+    z-index: -1;
+    transition: all 1s ease;
+}
+
+.service-card h3.h3-sc:hover::after {
+    height: 15px;
+    background: var(--pink-glow);
+    transform: skewX(-25deg) translateY(-2px);
 }
 
 .service-card p {
