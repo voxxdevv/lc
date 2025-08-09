@@ -34,6 +34,16 @@
         </div>
     </section>
 
+<!-- Add this search bar right above the projects section -->
+<section id="search-bar" style="padding: 1rem; text-align: center;">
+  <input
+    type="search"
+    id="projectSearch"
+    placeholder="Search legal info by project..."
+    style="width: 100%; max-width: 400px; padding: 0.5rem; font-size: 1rem;"
+    aria-label="Search legal information by project"
+  />
+</section>
 
 <section id="projects" class="section">
 <div class="service-card">
@@ -258,5 +268,26 @@ EndGPT™ provides advanced AI-generated content detection and analysis. While d
             }
         });
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("projectSearch");
+    const projectsSection = document.getElementById("projects");
+    const articles = projectsSection.querySelectorAll("article");
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+
+      articles.forEach((article) => {
+        const text = article.textContent.toLowerCase();
+        if (text.includes(query)) {
+          article.style.display = "";
+        } else {
+          article.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
