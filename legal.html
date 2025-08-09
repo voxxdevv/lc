@@ -39,18 +39,16 @@
   <input
     type="search"
     id="projectSearch"
-    placeholder="Search legal information by project..."
-    style="width: 100%; padding: 0.5rem; font-size: 1rem;"
+    placeholder="Search legal info by project..."
+    style="width: 100%; max-width: 400px; padding: 0.5rem; font-size: 1rem;"
+    aria-label="Search legal information by project"
   />
-  <p id="noResultsMessage" style="display:none; margin-top: 1rem; color: #f00; font-weight: bold;">
-    No legal information.
-  </p>
 </section>
 
 <section id="projects" class="section">
-<div class="service-card"style="padding-top: 0;">
-    <article style="margin-top: 0;padding-top: 0;">
-    <h2 style="margin-top: 1rem;"><span class="alt-highlight">Trademark</span> <span class="alt-highlight">Notice</span></h2>
+<div class="service-card">
+    <article>
+    <h2><span class="alt-highlight">Trademark</span> <span class="alt-highlight">Notice</span></h2>
         <p>
 “LumaCraft™,” “LumaMind™,” “EndGPT™,” and “PaletteAI™” are trademarks of LumaCraft. All other trademarks belong to their respective owners. Unauthorized use is prohibited.
         </p>
@@ -291,7 +289,13 @@ EndGPT™ provides advanced AI-generated content detection and analysis. While d
         }
       });
 
-      noResultsMessage.style.display = anyVisible ? "none" : "block";
+      if (anyVisible) {
+        projectsSection.style.display = "";
+        noResultsMessage.style.display = "none";
+      } else {
+        projectsSection.style.display = "none";
+        noResultsMessage.style.display = "block";
+      }
     });
   });
 </script>
