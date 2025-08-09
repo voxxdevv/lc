@@ -382,7 +382,7 @@ a:hover {
 .h3-sc::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: auto;
     border-radius: 1px;
     height: 1px;
     bottom: 0;
