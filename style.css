@@ -685,6 +685,43 @@ footer::before {
     box-shadow: 0 0 10px 2px var(--pink-glow);
 }
 
+#projectSearch {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  border: 2px solid var(--lime);
+  background: var(--dark);
+  color: var(--light);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 0 10px var(--lime-glow);
+  transition: 
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+  outline: none;
+}
+
+#projectSearch::placeholder {
+  color: rgba(249, 249, 249, 0.6);
+  font-weight: 300;
+}
+
+#projectSearch:focus {
+  border-color: var(--hot-pink);
+  box-shadow: 0 0 15px var(--pink-glow);
+  background-color: #1a1a1a;
+  color: var(--light);
+}
+
+/* Optional: add subtle text shadow on focus */
+#projectSearch:focus::placeholder {
+  color: rgba(255, 105, 180, 0.7);
+}
+
 /* Enhanced Animations */
 @keyframes floatBlob {
     0% {
