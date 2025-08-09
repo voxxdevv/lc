@@ -690,13 +690,13 @@ footer::before {
   max-width: 400px;
   padding: 0.75rem 1rem;
   border-radius: 30px;
-  border: 2px solid var(--lime);
+  border: 1px solid var(--lime);
   background: var(--dark);
   color: var(--light);
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  box-shadow: 0 0 10px var(--lime-glow);
+  box-shadow: 0 0 5px var(--lime-glow); /* reduced glow intensity */
   transition: 
     border-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -712,14 +712,13 @@ footer::before {
 
 #projectSearch:focus {
   border-color: var(--hot-pink);
-  box-shadow: 0 0 15px var(--pink-glow);
+  box-shadow: 0 0 8px var(--pink-glow); /* softer pink glow */
   background-color: #1a1a1a;
   color: var(--light);
 }
 
-/* Optional: add subtle text shadow on focus */
 #projectSearch:focus::placeholder {
-  color: rgba(255, 105, 180, 0.7);
+  color: rgba(255, 105, 180, 0.5);
 }
 
 /* Enhanced Animations */
