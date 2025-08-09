@@ -719,6 +719,10 @@ footer::before {
   color: var(--light);
 }
 
+.lgl-none {    
+        animation: fadeIn 0.2s ease forwards 0.2s;
+}
+
 #projectSearch:focus::placeholder {
   color: rgba(255, 105, 180, 0.5);
 }
