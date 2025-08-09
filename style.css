@@ -379,17 +379,30 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
+.h3-sc {
+  position: relative;
+  display: inline-block;
+}
+
 .h3-sc::after {
     content: '';
     position: absolute;
-    width: auto;
-    border-radius: 1px;
-    height: 1px;
-    bottom: 0;
+    height: 10px;
+    width: 0;
+    background: rgba(255, 105, 180, 0.2);
+    bottom: 5px;
     left: 0;
-    background: var(--hot-pink);
-    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: skewX(-15deg);
+    transition: width 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 1px;
+    z-index: -1;
+}
+
+.h3-sc:hover::after {
+    width: 100%;
+    background: var(--pink-glow);
+    transform: skewX(-25deg) translateY(-2px);
 }
 
 .service-card h3 {
