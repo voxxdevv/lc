@@ -703,6 +703,7 @@ footer::before {
     background-color 0.3s ease,
     color 0.3s ease;
   outline: none;
+    animation: fadeIn 1s ease forwards 1s;
 }
 
 #projectSearch::placeholder {
