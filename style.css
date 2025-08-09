@@ -379,7 +379,7 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
-.service-card h3::after {
+.h3-sc::after {
     content: '';
     position: absolute;
     width: 100%;
