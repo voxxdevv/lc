@@ -378,6 +378,12 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
+#altsc:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 105, 180, 0.3);
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
+}
 
 .service-card h3 {
     font-size: 1.5rem;
