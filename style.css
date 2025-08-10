@@ -94,9 +94,8 @@ header.scrolled::before {
 }
 
 .logo {
-  /* Use calc() to make it proportional to your largest font size */
-  height: calc(var(--font-3xl) * 1.2); /* 20% larger than main title */
-  width: calc(var(--font-3xl) * 1.2);
+  height: 60px; /* Increased significantly for better visibility */
+  width: 60px;  /* Increased significantly for better visibility */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -104,12 +103,13 @@ header.scrolled::before {
   transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
   object-fit: contain;
-  min-width: 2rem; /* Fallback minimum size */
-  min-height: 2rem;
+  max-width: none;
+  min-width: 60px;
+  min-height: 60px;
 }
 
 header.scrolled .logo {
-  transform: translate(-50%, -50%) scale(0.83);
+  transform: translate(-50%, -50%) scale(0.75); /* Scales to 45px when scrolled */
   filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
 
@@ -895,12 +895,21 @@ footer::before {
   }
 
   .logo {
-    height: calc(var(--font-2xl) * 1.3); /* Slightly larger proportion on mobile */
-    width: calc(var(--font-2xl) * 1.3);
+    height: 56px; /* Much larger on mobile for visibility */
+    width: 56px;
+    min-width: 56px;
+    min-height: 56px;
+  }
+
+  header.scrolled .logo {
+    transform: translate(-50%, -50%) scale(0.8); /* Scales to ~45px on mobile when scrolled */
   }
 }
 
-  header.scrolled .logo {
-    transform: translate(-50%, -50%) scale(0.75); /* Scales to 24px on mobile when scrolled */
+/* For high DPI screens, ensure logo stays crisp */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
