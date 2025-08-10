@@ -571,8 +571,7 @@ footer::before {
 }
 
 .footer-logo {
-    font-size: 3rem;
-    font-weight: 900;
+    font-size: 1.2rem;
     background: linear-gradient(45deg, var(--lime), var(--hot-pink));
     -webkit-background-clip: text;
     background-clip: text;
@@ -581,15 +580,15 @@ footer::before {
     animation: fadeIn 1s ease forwards;
     position: relative;
     padding: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .footer-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: right;         
-    text-align: right;
+    justify-content: center;         
+    text-align: center;
 }
 
 .footer-links a {
@@ -665,7 +664,7 @@ footer::before {
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.5);
     font-size: 1rem;
-    text-align: right;
+    text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards 1s;
 }
