@@ -519,6 +519,17 @@ a:hover {
     width: 0;
 }
 
+/* Trigger h3-sc animation when service card is hovered */
+.service-card:hover .h3-sc {
+    color: var(--light);
+}
+
+.service-card:hover .h3-sc::after {
+    height: 15px;
+    background: var(--pink-glow);
+    transform: skewX(-25deg) translateY(-2px);
+}
+
 footer {
     padding: 2.5rem;
     padding-left: 1rem;
