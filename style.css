@@ -394,16 +394,15 @@ a:hover {
     width: fit-content; /* Explicitly set width to content */
 }
 
-.service-card h3.h3-sc {
+.service-card h3 span.h3-sc {
     position: relative;
     display: inline-block;
     padding-bottom: 2px;
-    width: fit-content;
     color: var(--lime);
     transition: all 1s ease;
 }
 
-.service-card h3.h3-sc::after {
+.service-card h3 span.h3-sc::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -411,14 +410,17 @@ a:hover {
     background: rgba(255, 105, 180, 0.2);
     bottom: 5px;
     left: 0;
-    transform: skewX(-15deg);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 1px;
     z-index: -1;
+    transform: skewX(-15deg);
     transition: all 1s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.service-card h3.h3-sc:hover::after {
+.service-card h3 span.h3-sc:hover {
+    color: var(--light);
+}
+
+.service-card h3 span.h3-sc:hover::after {
     height: 15px;
     background: var(--pink-glow);
     transform: skewX(-25deg) translateY(-2px);
