@@ -571,8 +571,8 @@ footer::before {
 }
 
 .footer-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 900;
     background: linear-gradient(45deg, var(--lime), var(--hot-pink));
     -webkit-background-clip: text;
     background-clip: text;
@@ -581,6 +581,7 @@ footer::before {
     animation: fadeIn 1s ease forwards;
     position: relative;
     padding: 0;
+    text-align: left;
 }
 
 .footer-links {
@@ -865,6 +866,10 @@ footer::before {
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
     .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+        .footer-logo {
         font-size: 2.5rem;
     }
     
