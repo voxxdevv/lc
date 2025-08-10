@@ -13,6 +13,9 @@
     --font-size-lg: 1.5rem;     /* Subheadings */
     --font-size-md: 1rem;       /* Body text, inputs, badges */
     --font-size-sm: 0.9rem;     /* Small text */
+    
+    /* Logo sizing to match font system */
+    --logo-size: calc(var(--font-size-xl) + 0.5rem); /* 3rem = 48px */
 }
 
 * {
@@ -90,8 +93,8 @@ header.scrolled::before {
 }
 
 .logo {
-    height: 65px;
-    width: 65px;
+    height: var(--logo-size);
+    width: var(--logo-size);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -869,8 +872,14 @@ footer::before {
 
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
+    :root {
+        --font-size-xl: 2rem;     /* Smaller on mobile */
+        --font-size-lg: 1.25rem;  /* Smaller on mobile */
+        --logo-size: calc(var(--font-size-xl) + 0.25rem); /* Adjust logo for mobile */
+    }
+    
     .hero h1 {
-        font-size: 2rem;
+        font-size: var(--font-size-xl);
     }
     
     .blob-1, .blob-2 {
@@ -879,7 +888,7 @@ footer::before {
     }
     
     .section-title {
-        font-size: 1.75rem;
+        font-size: var(--font-size-xl);
     }
     
     .portfolio-grid {
