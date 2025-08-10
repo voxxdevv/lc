@@ -877,7 +877,7 @@ footer::before {
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
 html {
-    font-size: 85%;
+    font-size: 90%;
     }
 .blob-1, .blob-2 {
         width: 350px;
