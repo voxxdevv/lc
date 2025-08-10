@@ -866,24 +866,12 @@ footer::before {
 
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
-    * {
-        font-size: 80%
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .blob-1, .blob-2 {
-        width: 350px;
-        height: 350px;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    body {
+        transform: scale(0.8);
+        transform-origin: top left;
+        width: 125%;  /* Compensate so scaled content still fits horizontally */
+        height: auto;
+        overflow-x: hidden; /* Prevent horizontal scroll */
     }
 }
 
