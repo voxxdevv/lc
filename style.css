@@ -292,8 +292,6 @@ a {
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
-    text-wrap: nowrap; 
-    overflow-x: auto;
 }
 
 a:hover {
@@ -601,6 +599,8 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
+    text-wrap: nowrap; 
+    overflow-x: auto;
 }
 
 .footer-links a::after {
@@ -626,6 +626,8 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
+    text-wrap: nowrap; 
+    overflow-x: auto;
 }
 
 .alt-a::after {
