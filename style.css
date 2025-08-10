@@ -14,8 +14,8 @@
     --font-size-md: 1rem;       /* Body text, inputs, badges */
     --font-size-sm: 0.9rem;     /* Small text */
     
-    /* Logo sizing to match font system */
-    --logo-size: calc(var(--font-size-xl) + 0.5rem); /* 3rem = 48px */
+    /* Logo sizing - made larger */
+    --logo-size: calc(var(--font-size-xl) * 1.6); /* 4rem = 64px */
 }
 
 * {
@@ -875,7 +875,7 @@ footer::before {
     :root {
         --font-size-xl: 2rem;     /* Smaller on mobile */
         --font-size-lg: 1.25rem;  /* Smaller on mobile */
-        --logo-size: calc(var(--font-size-xl) + 0.25rem); /* Adjust logo for mobile */
+        --logo-size: calc(var(--font-size-xl) * 1.4); /* Proportional mobile logo */
     }
     
     .hero h1 {
