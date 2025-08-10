@@ -581,7 +581,7 @@ footer::before {
     animation: fadeIn 1s ease forwards;
     position: relative;
     padding: 0;
-    text-align: left;
+    text-align: right;
 }
 
 .footer-links {
@@ -664,7 +664,7 @@ footer::before {
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.5);
     font-size: 1rem;
-    text-align: center;
+    text-align: right;
     opacity: 0;
     animation: fadeIn 1s ease forwards 1s;
 }
