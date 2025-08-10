@@ -571,7 +571,8 @@ footer::before {
 }
 
 .footer-logo {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     background: linear-gradient(45deg, var(--lime), var(--hot-pink));
     -webkit-background-clip: text;
     background-clip: text;
