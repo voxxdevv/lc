@@ -599,6 +599,7 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
+    font-size: 1.2rem;
 }
 
 .footer-links a::after {
@@ -661,7 +662,7 @@ footer::before {
     width: 100%;
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards 1s;
