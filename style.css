@@ -7,6 +7,12 @@
     --light: #f9f9f9;
     --lime-glow: rgba(50, 205, 50, 0.4);
     --pink-glow: rgba(255, 105, 180, 0.4);
+    
+    /* Uniform font size system */
+    --font-size-xl: 2.5rem;     /* Main headings */
+    --font-size-lg: 1.5rem;     /* Subheadings */
+    --font-size-md: 1rem;       /* Body text, inputs, badges */
+    --font-size-sm: 0.9rem;     /* Small text */
 }
 
 * {
@@ -83,7 +89,6 @@ header.scrolled::before {
     z-index: 5;
 }
 
-
 .logo {
     height: 65px;
     width: 65px;
@@ -93,7 +98,6 @@ header.scrolled::before {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
-
 }
 
 header.scrolled .logo {
@@ -140,7 +144,7 @@ header.scrolled .logo {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: var(--font-size-xl);
     line-height: 1;
     margin-bottom: 0;
     font-weight: 900;
@@ -211,7 +215,7 @@ header.scrolled .logo {
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: var(--font-size-md);
     margin-top: 1rem;
     margin-bottom: 0;
     padding: 0;
@@ -301,7 +305,7 @@ a:hover {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-xl);
     font-weight: 700;
     padding: 0;
     margin-bottom: 2.5rem;
@@ -378,9 +382,8 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
-
 .service-card h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     margin: 0;
     margin-bottom: 1rem;
     color: var(--lime);
@@ -429,13 +432,14 @@ a:hover {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    font-size: var(--font-size-md);
 }
 
 .project-badge {
     display: inline-block;
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: var(--font-size-md);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -571,7 +575,7 @@ footer::before {
 }
 
 .footer-logo {
-    font-size: 1.5rem;
+    font-size: var(--font-size-lg);
     font-weight: 800;
     background: linear-gradient(45deg, var(--lime), var(--hot-pink));
     -webkit-background-clip: text;
@@ -593,6 +597,7 @@ footer::before {
 .footer-links a {
     color: var(--light);
     text-decoration: none;
+    font-size: var(--font-size-md);
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -618,6 +623,7 @@ footer::before {
     display: inline-block;
     color: var(--hot-pink);
     text-decoration: none;
+    font-size: var(--font-size-md);
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     animation: fadeIn 1s ease forwards;
@@ -661,7 +667,7 @@ footer::before {
     width: 100%;
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s ease forwards 1s;
@@ -708,7 +714,7 @@ footer::before {
   color: var(--light);
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--font-size-md);
   box-shadow: 0 0 5px var(--lime-glow); /* reduced glow intensity */
   transition: 
     border-color 0.3s ease,
@@ -864,7 +870,7 @@ footer::before {
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .blob-1, .blob-2 {
@@ -873,7 +879,7 @@ footer::before {
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     .portfolio-grid {
