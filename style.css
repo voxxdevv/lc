@@ -431,6 +431,10 @@ a:hover {
     padding: 0;
 }
 
+.service-card:last-child:nth-child(odd) {
+    justify-self: center;
+}
+
 .project-badge {
     display: inline-block;
     padding: 6px 12px;
