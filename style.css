@@ -588,7 +588,8 @@ footer::before {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;         
+    justify-content: right;         
+    text-align: right;
 }
 
 .footer-links a {
