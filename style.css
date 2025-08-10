@@ -292,7 +292,7 @@ a {
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
-    white-space: nowrap; 
+    text-wrap: nowrap; 
     overflow-x: auto;
 }
 
