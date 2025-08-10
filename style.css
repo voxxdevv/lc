@@ -85,8 +85,8 @@ header.scrolled::before {
 
 
 .logo {
-    height: 65px;
-    width: 65px;
+    height: 4.0625rem;
+    width: 4.0625rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -868,6 +868,13 @@ footer::before {
 @media screen and (max-width: 768px) {
 html {
     font-size: 95%;
+    }
+.blob-1, .blob-2 {
+        width: 350px;
+        height: 350px;
+    }
+.portfolio-grid {
+        grid-template-columns: 1fr;
     }
 }
 
