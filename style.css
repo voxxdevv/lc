@@ -450,6 +450,7 @@ a:hover {
 
 .badge-website {
     background-color: rgba(50, 205, 50, 0.2);
+    margin-bottom: 1.5rem;
     color: var(--lime);
     border: 1px solid var(--lime);
 }
@@ -457,11 +458,11 @@ a:hover {
 .badge-website:hover {
     background-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
-    margin-bottom: calc(1rem + 3px);
 }
 
 .badge-ios {
     background-color: rgba(255, 105, 180, 0.2);
+    margin-bottom: 1.5rem;
     color: var(--hot-pink);
     border: 1px solid var(--hot-pink);
 }
@@ -469,7 +470,6 @@ a:hover {
 .badge-ios:hover {
     background-color: rgba(255, 105, 180, 0.3);
     box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
-    margin-bottom: calc(1rem + 3px);
 }
 
 .badge-platforms {
