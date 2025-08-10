@@ -574,10 +574,12 @@ footer::before {
     width: 100%;
     position: relative;
     z-index: 2;
+    margin-top: 0.5rem;
 }
 
 .footer-logo {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     background: linear-gradient(45deg, var(--lime), var(--hot-pink));
     -webkit-background-clip: text;
