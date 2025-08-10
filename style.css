@@ -333,8 +333,9 @@ a:hover {
 }
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     margin-top: 0;
     padding-bottom: 0.5rem;
@@ -344,6 +345,7 @@ a:hover {
 }
 
 .service-card {
+    flex: 0 0 300px; /* Fixed width cards */
     background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 30px;
@@ -354,7 +356,7 @@ a:hover {
     opacity: 0;
     animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     animation-delay: calc(var(--card-index, 0) * 0.1s + 0.2s);
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
