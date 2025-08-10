@@ -866,12 +866,8 @@ footer::before {
 
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
-    body {
-        transform: scale(0.8);
-        transform-origin: top left;
-        width: 100vw;  /* Compensate so scaled content still fits horizontally */
-        height: auto;
-        overflow-x: hidden; /* Prevent horizontal scroll */
+html {
+    font-size: 95%;
     }
 }
 
