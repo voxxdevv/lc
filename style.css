@@ -450,7 +450,8 @@ a:hover {
 
 .badge-website {
     background-color: rgba(50, 205, 50, 0.2);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: 0.5rem;
     color: var(--lime);
     border: 1px solid var(--lime);
 }
@@ -462,7 +463,8 @@ a:hover {
 
 .badge-ios {
     background-color: rgba(255, 105, 180, 0.2);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: 0.5rem;
     color: var(--hot-pink);
     border: 1px solid var(--hot-pink);
 }
@@ -500,7 +502,6 @@ a:hover {
 .service-card:hover .badge-website {
     background-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
-    margin-bottom: calc(1rem + 3px);
 }
 
 .service-card:hover .badge-ios {
