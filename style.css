@@ -866,6 +866,9 @@ footer::before {
 
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
+    * {
+        font-size: 80%
+    }
     .hero h1 {
         font-size: 2.5rem;
     }
