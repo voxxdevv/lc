@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --lime: #32CD32;
-    --hot-pink: #FF69B4;
-    --dark: #131313;
-    --light: #f9f9f9;
-    --lime-glow: rgba(50, 205, 50, 0.4);
-    --pink-glow: rgba(255, 105, 180, 0.4);
+--lime: #FF6F00;            /* vibrant persimmon-like orange */
+--hot-pink: #98FFCC;        /* mint green / light teal */
+--dark: #FF8C00;            /* a deeper orange for contrast/shadows */
+--light: #FFFFFF;           /* clean white */
+--lime-glow: rgba(255, 111, 0, 0.3);   /* soft orange glow */
+--pink-glow: rgba(152, 255, 204, 0.3); /* mint glow */
 }
 
 * {
