@@ -416,38 +416,6 @@ a:hover {
     width: 100%;
 }
 
-.service-card h3 span.h3-sc {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 2px;
-    color: var(--lime);
-    transition: all 1s ease;
-}
-
-.service-card h3 span.h3-sc::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 10px;
-    background: rgba(255, 105, 180, 0.2);
-    bottom: 5px;
-    left: 0;
-    z-index: -1;
-    transform: skewX(-15deg);
-    transition: all 1s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.service-card h3 span.h3-sc:hover {
-    color: var(--light);
-}
-
-.service-card h3 span.h3-sc:hover::after {
-    height: 15px;
-    background: var(--pink-glow);
-    transform: skewX(-25deg) translateY(-2px);
-}
-
 .service-card p {
     line-height: 1.5;
     margin: 0;
@@ -542,15 +510,8 @@ a:hover {
     width: 100%;
 }
 
-/* Trigger h3-sc animation when service card is hovered */
-.service-card:hover .h3-sc {
-    color: var(--light);
-}
-
-.service-card:hover .h3-sc::after {
-    height: 15px;
-    background: var(--pink-glow);
-    transform: skewX(-25deg) translateY(-2px);
+.service-card:hover p {
+    margin-top: calc(1rem + 3px);
 }
 
 footer {
