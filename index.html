@@ -238,22 +238,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--THEME-->
 
   <script>
-    fetch('modal.html')
+    fetch('theme/modal.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('modalContainer').innerHTML = html;
 
-        // Optional: dynamically load CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'modal.css';
-        document.head.appendChild(link);
-
-        // Optional: dynamically load JS
-        const script = document.createElement('script');
-        script.src = 'modal.js';
-        document.body.appendChild(script);
-      })
       .catch(err => console.error('Failed to load modal:', err));
   </script>
 
