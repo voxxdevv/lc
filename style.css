@@ -387,7 +387,8 @@ a:hover {
 #altsc h2 {
     color: var(--hot-pink);  /* Added missing semicolon */
     margin-bottom: 1rem;
-    position: relative;      /* Added for ::after positioning */
+    position: relative;
+    display: inline-block;   /* Added to make h2 only as wide as its content */
 }
 
 #altsc h2::after {
@@ -395,7 +396,7 @@ a:hover {
     position: absolute;
     width: 0;
     height: 1px;
-    bottom: -3px;           /* Changed from bottom: 0 and removed margin-bottom */
+    bottom: -3px;
     left: 0;
     background: var(--hot-pink);
     border-radius: 1px;
@@ -403,11 +404,12 @@ a:hover {
 }
 
 #altsc h2:hover::after {
-    width: 100%;
+    width: 100%;  /* Now 100% will be the width of the text, not full container */
 }
 
 #altsc h2:hover {
     color: var(--light);
+    margin-bottom: calc(1rem + 3px);
 }
 
 .service-card h3 {
