@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <div id="modalContainer"></div>
     <div class="noise"></div>
     
     <header id="navbar">
@@ -234,5 +235,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   </script>
 
+<!--THEME-->
+
+  <script>
+    fetch('https://nft.itis.top/ico/theme/modal.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('modalContainer').innerHTML = html;
+
+        // Optional: dynamically load CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://nft.itis.top/ico/theme/modal.css';
+        document.head.appendChild(link);
+
+        // Optional: dynamically load JS
+        const script = document.createElement('script');
+        script.src = 'https://nft.itis.top/ico/theme/modal.js';
+        document.body.appendChild(script);
+      })
+      .catch(err => console.error('Failed to load modal:', err));
+  </script>
+
+<!-- THEME -->
 </body>
 </html>
