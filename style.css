@@ -384,20 +384,20 @@ a:hover {
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
-
 #altsc h2 {
-    color: var(--hot-pink)
-    
+    color: var(--hot-pink);  /* Added missing semicolon */
+    margin-bottom: 1rem;
+    position: relative;      /* Added for ::after positioning */
 }
+
 #altsc h2::after {
     content: '';
     position: absolute;
     width: 0;
     height: 1px;
-    bottom: 0;
+    bottom: -3px;           /* Changed from bottom: 0 and removed margin-bottom */
     left: 0;
     background: var(--hot-pink);
-    margin-bottom: calc(1rem + 3px);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
