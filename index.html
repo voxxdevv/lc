@@ -371,25 +371,36 @@ document.addEventListener('DOMContentLoaded', function() {
   </script>
 
   <!-- Modal JavaScript -->
-  <script>
-    const modal = document.getElementById('lumaModal');
-    const closeBtn = document.getElementById('closeModal');
+<script>
+  const modal = document.getElementById('lumaModal');
+  const closeBtn = document.getElementById('closeModal');
 
-    const closeModal = () => {
-      modal.style.animation = 'fadeOut 0.5s ease-out';
-      setTimeout(() => {
-        modal.style.display = 'none';
-      }, 500);
-    };
+  // Check if user has visited before
+  const hasVisited = localStorage.getItem('lumaModalSeen');
+  
+  if (hasVisited) {
+    // Hide modal immediately if user has visited before
+    modal.style.display = 'none';
+  } else {
+    // Mark that user has now seen the modal
+    localStorage.setItem('lumaModalSeen', 'true');
+  }
 
-    closeBtn.addEventListener('click', closeModal);
+  const closeModal = () => {
+    modal.style.animation = 'fadeOut 0.5s ease-out';
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 500);
+  };
 
-    window.addEventListener('click', (e) => {
-      if(e.target === modal){
-        closeModal();
-      }
-    });
-  </script>
+  closeBtn.addEventListener('click', closeModal);
+
+  window.addEventListener('click', (e) => {
+    if(e.target === modal){
+      closeModal();
+    }
+  });
+</script>
 
 </body>
 </html>
