@@ -399,6 +399,23 @@ a:hover {
     width: fit-content; /* Explicitly set width to content */
 }
 
+/* Add lime green underline effect to service card h3 */
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: var(--lime);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card h3:hover::after {
+    width: 100%;
+}
+
 .service-card h3 span.h3-sc {
     position: relative;
     display: inline-block;
@@ -522,7 +539,7 @@ a:hover {
 }
 
 .service-card:hover h3::after {
-    width: 0;
+    width: 100%;
 }
 
 /* Trigger h3-sc animation when service card is hovered */
