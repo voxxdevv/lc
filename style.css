@@ -610,17 +610,25 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     text-decoration: none;
     position: relative;
-    background-image: linear-gradient(to right, var(--hot-pink), var(--hot-pink));
-    background-size: 0 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     padding: 3px 0;
     font-size: 1.2rem;
 }
 
-.footer-links a:hover {
-    background-size: 100% 1px;
+/* Add rounded underline effect with pseudo-element overlay */
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: var(--hot-pink);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
 }
 
 .alt-a {
