@@ -237,14 +237,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!--THEME-->
 
-  <script>
-    fetch('theme/modal.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('modalContainer').innerHTML = html;
-
-      .catch(err => console.error('Failed to load modal:', err));
-  </script>
+<script>
+  fetch('theme/modal.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('modalContainer').innerHTML = html;
+    })
+    .catch(err => console.error('Failed to load modal:', err));
+</script>
 
 <!-- THEME -->
 </body>
