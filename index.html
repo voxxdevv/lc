@@ -375,18 +375,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('lumaModal');
   const closeBtn = document.getElementById('closeModal');
 
-  // Check if user has visited before
-  const hasVisited = localStorage.getItem('lumaModalSeen');
+  // Check if user has closed the modal before
+  const modalClosed = localStorage.getItem('lumaModalClosed');
   
-  if (hasVisited) {
-    // Hide modal immediately if user has visited before
+  if (modalClosed) {
+    // Hide modal immediately if user has closed it before
     modal.style.display = 'none';
-  } else {
-    // Mark that user has now seen the modal
-    localStorage.setItem('lumaModalSeen', 'true');
   }
 
   const closeModal = () => {
+    // Mark that user has closed the modal
+    localStorage.setItem('lumaModalClosed', 'true');
+    
     modal.style.animation = 'fadeOut 0.5s ease-out';
     setTimeout(() => {
       modal.style.display = 'none';
