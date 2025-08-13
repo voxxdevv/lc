@@ -601,7 +601,8 @@ footer::before {
     width: 0;
     height: 1px;
     bottom: 0;
-    left: 0;
+    left: 50%; /* Start from center */
+    transform: translateX(-50%); /* Center the element */
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
