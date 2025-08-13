@@ -385,6 +385,10 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
+#altsc h2 {
+    color: var(--hot-pink)
+    
+}
 #altsc h2::after {
     content: '';
     position: absolute;
@@ -400,6 +404,10 @@ a:hover {
 
 #altsc h2:hover::after {
     width: 100%;
+}
+
+#altsc h2:hover {
+    color: var(--light);
 }
 
 .service-card h3 {
