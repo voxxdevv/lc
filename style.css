@@ -503,15 +503,11 @@ a:hover {
 /* H3 animation when service card is hovered */
 .service-card:hover h3 {
     color: var(--light);
-    margin-bottom: calc(1rem - 3px);
+    margin-bottom: calc(1rem + 3px);
 }
 
 .service-card:hover h3::after {
     width: 100%;
-}
-
-.service-card:hover p {
-    margin-top: calc(1rem + 3px);
 }
 
 footer {
