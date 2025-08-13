@@ -385,6 +385,23 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
+#altsc h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: var(--hot-pink);
+    margin-bottom: calc(1rem + 3px);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#altsc h2:hover::after {
+    width: 100%;
+}
+
 .service-card h3 {
     font-size: 1.5rem;
     margin: 0;
