@@ -384,15 +384,12 @@ a:hover {
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
-
 #altsc h2 {
-    color: var(--hot-pink);
+    color: var(--hot-pink);  /* Added missing semicolon */
     margin-bottom: 1rem;
     transition: all 1s ease;
     position: relative;
-    display: inline;
-    text-decoration: none;
-    text-underline-offset: 3px;
+    display: inline-block;   /* Added to make h2 only as wide as its content */
 }
 
 #altsc h2::after {
@@ -407,16 +404,13 @@ a:hover {
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#altsc h2:hover {
-    color: var(--light);
-    text-decoration: underline;
-    text-decoration-color: var(--hot-pink);
-    text-decoration-thickness: 1px;
-    margin-bottom: calc(1rem + 3px);
+#altsc h2:hover::after {
+    width: 100%;  /* Now 100% will be the width of the text, not full container */
 }
 
-#altsc h2:hover::after {
-    width: 0;
+#altsc h2:hover {
+    color: var(--light);
+    margin-bottom: calc(1rem + 3px);
 }
 
 .service-card h3 {
@@ -425,15 +419,15 @@ a:hover {
     margin-bottom: 1rem;
     color: var(--lime);
     position: relative;
-    display: inline;
+    display: inline-block;
     padding: 0;
     transition: all 1s ease;
     padding-bottom: 2px;
-    width: fit-content;
-    text-decoration: none;
-    text-underline-offset: 2px;
+    position: relative;
+    width: fit-content; /* Explicitly set width to content */
 }
 
+/* Add lime green underline effect to service card h3 */
 .service-card h3::after {
     content: '';
     position: absolute;
@@ -446,15 +440,8 @@ a:hover {
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.service-card h3:hover {
-    color: var(--light);
-    text-decoration: underline;
-    text-decoration-color: var(--lime);
-    text-decoration-thickness: 1px;
-}
-
 .service-card h3:hover::after {
-    width: 0;
+    width: 100%;
 }
 
 .service-card p {
@@ -544,14 +531,11 @@ a:hover {
 /* H3 animation when service card is hovered */
 .service-card:hover h3 {
     color: var(--light);
-    text-decoration: underline;
-    text-decoration-color: var(--lime);
-    text-decoration-thickness: 1px;
     margin-bottom: calc(1rem + 3px);
 }
 
 .service-card:hover h3::after {
-    width: 0;
+    width: 100%;
 }
 
 footer {
@@ -636,37 +620,28 @@ footer::before {
     position: relative;
     padding: 3px 0;
     font-size: 1.2rem;
-    display: inline;
-    text-underline-offset: 2px;
 }
 
+/* Add rounded underline effect with pseudo-element overlay */
 .footer-links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 1px;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* Start from center */
+    transform: translateX(-50%); /* Center the element */
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.footer-links a:hover {
-    color: var(--lime);
-    transform: translateY(-2px);
-    text-decoration: underline;
-    text-decoration-color: var(--hot-pink);
-    text-decoration-thickness: 1px;
-}
-
 .footer-links a:hover::after {
-    width: 0;
+    width: 100%;
 }
 
 .alt-a {
-    display: inline;
+    display: inline-block;
     color: var(--hot-pink);
     text-decoration: none;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -675,7 +650,6 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
-    text-underline-offset: 2px;
 }
 
 .alt-a::after {
@@ -690,16 +664,22 @@ footer::before {
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.alt-a:hover::after {
+    width: 100%;
+}
+
 .alt-a:hover {
     color: var(--light);
     transform: translateY(-2px);
-    text-decoration: underline;
-    text-decoration-color: var(--hot-pink);
-    text-decoration-thickness: 1px;
 }
 
-.alt-a:hover::after {
-    width: 0;
+.footer-links a:hover {
+    color: var(--lime);
+    transform: translateY(-2px);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
 }
 
 .footer-text {
