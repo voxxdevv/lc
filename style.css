@@ -50,7 +50,7 @@ header {
 
 header.scrolled {
     padding: 2.585rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: saturate(5) blur(10px);
     background: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
