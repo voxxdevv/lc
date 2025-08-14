@@ -149,7 +149,7 @@
       <div class="modal-content">
         <img src="https://nft.itis.top/ico/theme/logo.png" alt="LumaCraft™/LumaMind™ Themed Logo" class="modal-logo">
         <h2>Ask LumaMind™ about Taylor Swift's new album, "The Life of a Showgirl".</h2>
-        <a href="https://nft.itis.top/lm" class="modal-btn">Ask Now</a>
+        <a id="askBtn" href="https://nft.itis.top/lm" class="modal-btn">Ask Now</a>
         <span id="closeModal" class="modal-btn" style="margin-top: 0.5rem;">Close</span>        <p style="font-style: normal;padding-top: 2rem;padding-bottom:0;margin-bottom:0;">
       "Taylor Swift®" is a registered trademark of TAS Rights Management, LLC. "The Life of a Showgirl" is a pending trademark of TAS Rights Management, LLC. LumaCraft™ is not affiliated with, endorsed by, or in any way connected to Taylor Swift or her related entities.
 </p>
@@ -375,10 +375,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   </script>
 
-  <!-- Modal JavaScript -->
+<!-- Modal JavaScript -->
 <script>
   const modal = document.getElementById('lumaModal');
   const closeBtn = document.getElementById('closeModal');
+  const askBtn = document.getElementById('askBtn');
 
   // Check if user has closed the modal before
   const modalClosed = localStorage.getItem('lumaModalClosed');
@@ -399,6 +400,11 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   closeBtn.addEventListener('click', closeModal);
+
+  // Hide modal when askBtn is clicked (but keep link behavior)
+  askBtn.addEventListener('click', () => {
+    closeModal(); // Close/hide the modal but allow the link to work normally
+  });
 
   window.addEventListener('click', (e) => {
     if(e.target === modal){
