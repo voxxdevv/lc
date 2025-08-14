@@ -410,7 +410,7 @@ a:hover {
 
 #altsc h2:hover {
     color: var(--light);
-    margin-bottom: calc(1rem + 3px);
+    margin-bottom: calc(1rem + 6px);
 }
 
 .service-card h3 {
