@@ -104,7 +104,6 @@ header.scrolled .logo {
     transform: translate(-50%, -50%) scale(0.9);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
-Make the bottom of the hero have an inverted border radius of 30px that looks exactly like the hero background:
 
 .hero {
 margin-top: 6rem;
