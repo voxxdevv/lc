@@ -31,7 +31,7 @@ html, body {
 
 header {
     position: fixed;
-	 margin-bottom: 10px;
+	  margin-bottom: 10px;
     width: 100%;
     top: 0;
     right: 0;
@@ -88,18 +88,18 @@ header.scrolled::before {
 .logo {
     height: 4.0625rem;
     width: 4.0625rem;
-    position: absolute;
-    top: 50%;
+    position: fixed; /* CORRECTED: Changed from absolute to fixed */
+    top: 3rem;       /* CORRECTED: Set a fixed top value */
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translateX(-50%) scale(1); /* CORRECTED: Simplified transform */
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
     will-change: transform, filter; /* ADDED for hardware acceleration */
-
 }
 
 header.scrolled .logo {
     transform: translate(-50%, -50%) scale(0.9);
+    top: 2.585rem; /* NEW: Match the new header padding to keep it centered */
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
 
