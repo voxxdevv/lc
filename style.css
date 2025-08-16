@@ -36,6 +36,7 @@ header {
     top: 0;
     right: 0;
     padding: 3rem;
+    padding-top: 3.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +51,7 @@ header {
 
 header.scrolled {
     padding: 2.585rem;
+    padding-top: 2.59rem;
     backdrop-filter: saturate(5) blur(10px);
     background: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
