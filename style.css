@@ -105,45 +105,31 @@ header.scrolled .logo {
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
 .hero {
-    margin-top: 6rem;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding: 0 1rem;
-    padding-top: 2.75rem;
-    padding-bottom: 2.5rem;
-    position: relative;
-    overflow: visible;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+  margin-top: 6rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 0 1rem;
+  padding-top: 2.75rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #32CD32, #FF69B4); /* example */
 }
 
-/* Left inverted corner */
-.hero::before {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    background: #ffffff; /* Your page background color */
-    border-top-right-radius: 30px;
-    z-index: 10;
-}
-
-/* Right inverted corner */
+/* Inverted radius at bottom */
 .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -30px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background: #ffffff; /* Your page background color */
-    border-top-left-radius: 30px;
-    z-index: 10;
+  content: "";
+  position: absolute;
+  bottom: -30px; /* offset by radius */
+  left: 0;
+  width: 100%;
+  height: 60px; /* diameter = 2 * radius */
+  background: white; /* or whatever your page background is */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 .hero-content {
     width: 100%;
