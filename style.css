@@ -37,8 +37,7 @@ header {
     right: 0;
     padding: 3rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* CORRECTED: Removed justify-content and align-items to prevent conflict */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000000;
@@ -88,8 +87,8 @@ header.scrolled::before {
 .logo {
     height: 4.0625rem;
     width: 4.0625rem;
-    position: absolute; /* REVERTED to original 'absolute' position */
-    top: 50%;       /* REVERTED to original 'top: 50%' */
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -910,17 +909,6 @@ footer::before {
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
-    
-    /* ADDED to fix mobile logo positioning while keeping original behavior */
-    .logo {
-        top: 40%;
-        transform: translate(-50%, -40%) scale(1);
-    }
-    /*
-        The above rules adjust the top position and transform values
-        specifically for mobile to correct the placement without
-        disrupting the original centering logic on larger screens.
-    */
     
     /* Hardware acceleration for mobile */
     header,
