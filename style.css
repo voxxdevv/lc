@@ -44,7 +44,12 @@ header {
     z-index: 1000000;
     border-bottom: none;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0),
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3),
+        rgba(255, 255, 255, 0)
+    );
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
