@@ -46,7 +46,7 @@ header {
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform, filter; /* ADDED for hardware acceleration */
+    will-change: transform, filter;
 }
 
 header.scrolled {
@@ -88,18 +88,17 @@ header.scrolled::before {
 .logo {
     height: 4.0625rem;
     width: 4.0625rem;
-    position: fixed; /* CORRECTED: Changed from absolute to fixed */
-    top: 3rem;       /* CORRECTED: Set a fixed top value */
+    position: absolute; /* REVERTED to original 'absolute' position */
+    top: 50%;       /* REVERTED to original 'top: 50%' */
     left: 50%;
-    transform: translateX(-50%) scale(1); /* CORRECTED: Simplified transform */
+    transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
-    will-change: transform, filter; /* ADDED for hardware acceleration */
+    will-change: transform, filter;
 }
 
 header.scrolled .logo {
     transform: translate(-50%, -50%) scale(0.9);
-    top: 2.585rem; /* NEW: Match the new header padding to keep it centered */
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
 
@@ -155,7 +154,7 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
-    will-change: color; /* ADDED for hardware acceleration */
+    will-change: color;
 }
 
 .highlight::after {
@@ -170,7 +169,7 @@ header.scrolled .logo {
     transform: skewX(-15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform; /* ADDED for hardware acceleration */
+    will-change: transform;
 }
 
 .highlight:hover {
@@ -188,7 +187,7 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
-    will-change: color; /* ADDED for hardware acceleration */
+    will-change: color;
 }
 
 .alt-highlight::after {
@@ -203,7 +202,7 @@ header.scrolled .logo {
     transform: skewX(15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform; /* ADDED for hardware acceleration */
+    will-change: transform;
 }
 
 .alt-highlight:hover {
@@ -234,7 +233,7 @@ header.scrolled .logo {
     will-change: transform, opacity;
     transition: all 1s ease;
     pointer-events: none;
-    transform: translateZ(0); /* ADDED for hardware acceleration */
+    transform: translateZ(0);
 }
 
 .blob-1 {
@@ -247,7 +246,7 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob1 15s ease-in-out infinite alternate, floatBlob 20s ease-in-out infinite;
-    will-change: transform, opacity, filter; /* ADDED for hardware acceleration */
+    will-change: transform, opacity, filter;
 }
 
 .blob-2 {
@@ -260,7 +259,7 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob2 18s ease-in-out infinite alternate, floatBlob 25s ease-in-out infinite reverse;
-    will-change: transform, opacity, filter; /* ADDED for hardware acceleration */
+    will-change: transform, opacity, filter;
 }
 
 /* Additional background elements for enhanced visual effects */
@@ -292,7 +291,7 @@ header.scrolled .logo {
 .section {
     padding-top: 2.5rem;
     padding-right: 1rem;
-    padding-bottom: 2.5rem; /* Your desired value */
+    padding-bottom: 2.5rem;
     padding-left: 1rem;
     position: relative;
 }
@@ -367,7 +366,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform; /* ADDED for hardware acceleration */
+    will-change: transform;
 }
 
 .service-card::before {
@@ -382,24 +381,24 @@ a:hover {
 }
 
 .service-card:hover {
-    transform: translateY(-10px) scale(1.02) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
+    transform: translateY(-10px) scale(1.02) translateZ(0);
     border-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 15px 35px rgba(50, 205, 50, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
 #altsc:hover {
-    transform: translateY(-10px) scale(1.02) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
+    transform: translateY(-10px) scale(1.02) translateZ(0);
     border-color: rgba(255, 105, 180, 0.3);
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 #altsc h2 {
-    color: var(--hot-pink);  /* Added missing semicolon */
+    color: var(--hot-pink);
     margin-bottom: 1rem;
     transition: all 1s ease;
     position: relative;
-    display: inline-block;   /* Added to make h2 only as wide as its content */
+    display: inline-block;
 }
 
 #altsc h2::after {
@@ -415,7 +414,7 @@ a:hover {
 }
 
 #altsc h2:hover::after {
-    width: 100%;  /* Now 100% will be the width of the text, not full container */
+    width: 100%;
 }
 
 #altsc h2:hover {
@@ -434,7 +433,7 @@ a:hover {
     transition: all 1s ease;
     padding-bottom: 2px;
     position: relative;
-    width: fit-content; /* Explicitly set width to content */
+    width: fit-content;
 }
 
 /* Add lime green underline effect to service card h3 */
@@ -542,7 +541,7 @@ a:hover {
 .service-card:hover h3 {
     color: var(--light);
     margin-bottom: calc(1rem + 3px);
-    transform: translateZ(0); /* ADDED for hardware acceleration */
+    transform: translateZ(0);
 }
 
 .service-card:hover h3::after {
@@ -617,7 +616,7 @@ footer::before {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;         
+    justify-content: center;
     text-align: center;
 }
 
@@ -631,7 +630,7 @@ footer::before {
     position: relative;
     padding: 3px 0;
     font-size: 1.2rem;
-    will-change: transform; /* ADDED for hardware acceleration */
+    will-change: transform;
 }
 
 /* Add rounded underline effect with pseudo-element overlay */
@@ -641,8 +640,8 @@ footer::before {
     width: 0;
     height: 1px;
     bottom: 0;
-    left: 50%; /* Start from center */
-    transform: translateX(-50%); /* Center the element */
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -662,7 +661,7 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
-    will-change: transform; /* ADDED for hardware acceleration */
+    will-change: transform;
 }
 
 .alt-a::after {
@@ -683,12 +682,12 @@ footer::before {
 
 .alt-a:hover {
     color: var(--light);
-    transform: translateY(-2px) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
+    transform: translateY(-2px) translateZ(0);
 }
 
 .footer-links a:hover {
     color: var(--lime);
-    transform: translateY(-2px) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
+    transform: translateY(-2px) translateZ(0);
 }
 
 .footer-links a:hover::after {
@@ -747,7 +746,7 @@ footer::before {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  box-shadow: 0 0 5px var(--lime-glow); /* reduced glow intensity */
+  box-shadow: 0 0 5px var(--lime-glow);
   transition: 
     border-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -765,7 +764,7 @@ footer::before {
 
 #projectSearch:focus {
   border-color: var(--hot-pink);
-  box-shadow: 0 0 8px var(--pink-glow); /* softer pink glow */
+  box-shadow: 0 0 8px var(--pink-glow);
   background-color: #1a1a1a;
   color: var(--light);
 }
@@ -899,7 +898,7 @@ footer::before {
     }
 }
 
-/* Add Responsive design fixes */
+/* Add Responsive design fixes and hardware acceleration */
 @media screen and (max-width: 768px) {
     html {
         font-size: 90%;
@@ -912,9 +911,19 @@ footer::before {
         grid-template-columns: 1fr;
     }
     
-    /* ADDED for hardware acceleration on mobile */
+    /* ADDED to fix mobile logo positioning while keeping original behavior */
+    .logo {
+        top: 40%;
+        transform: translate(-50%, -40%) scale(1);
+    }
+    /*
+        The above rules adjust the top position and transform values
+        specifically for mobile to correct the placement without
+        disrupting the original centering logic on larger screens.
+    */
+    
+    /* Hardware acceleration for mobile */
     header,
-    .logo,
     .hero-content,
     .highlight,
     .alt-highlight,
