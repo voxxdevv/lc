@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     --lime: #32CD32;
@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -731,7 +731,6 @@ footer::before {
   border: 1px solid var(--lime);
   background: var(--dark);
   color: var(--light);
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   box-shadow: 0 0 5px var(--lime-glow); /* reduced glow intensity */
