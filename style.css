@@ -29,8 +29,6 @@ html, body {
     position: relative;
 }
 
-Make this have an inverted border radius, but on both sides:
-
 header {
     position: fixed;
 	 margin-bottom: 10px;
