@@ -18,6 +18,21 @@
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
     text-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    /* Mobile optimization: prevent text selection on interactive elements */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Re-enable text selection for readable content */
+p, h1, h2, h3, h4, h5, h6, span {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 html, body {
@@ -27,11 +42,14 @@ html, body {
     max-width: 100%;
     scroll-behavior: smooth;
     position: relative;
+    /* Mobile optimization: improve scrolling performance */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
 }
 
 header {
     position: fixed;
-	 margin-bottom: 10px;
+    margin-bottom: 10px;
     width: 100%;
     top: 0;
     right: 0;
@@ -46,6 +64,9 @@ header {
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, padding;
 }
 
 header.scrolled {
@@ -83,7 +104,6 @@ header.scrolled::before {
     z-index: 5;
 }
 
-
 .logo {
     height: 4.0625rem;
     width: 4.0625rem;
@@ -93,7 +113,9 @@ header.scrolled::before {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
-
+    /* Mobile optimization: hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 header.scrolled .logo {
@@ -113,6 +135,8 @@ header.scrolled .logo {
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: improve rendering performance */
+    contain: layout style paint;
 }
 
 .hero::before {
@@ -146,6 +170,8 @@ header.scrolled .logo {
     font-weight: 900;
     position: relative;
     padding: 0;
+    /* Mobile optimization: prevent layout shifts */
+    contain: layout;
 }
 
 .highlight {
@@ -153,6 +179,8 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
+    /* Mobile optimization: improve touch response */
+    touch-action: manipulation;
 }
 
 .highlight::after {
@@ -167,6 +195,8 @@ header.scrolled .logo {
     transform: skewX(-15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: hardware acceleration */
+    will-change: transform, background;
 }
 
 .highlight:hover {
@@ -179,11 +209,25 @@ header.scrolled .logo {
     transform: skewX(-25deg) translateY(-2px);
 }
 
+/* Mobile touch interactions for highlight elements */
+@media (hover: none) and (pointer: coarse) {
+    .highlight:active {
+        color: var(--light);
+    }
+    .highlight:active::after {
+        height: 15px;
+        background: var(--pink-glow);
+        transform: skewX(-25deg) translateY(-2px);
+    }
+}
+
 .alt-highlight {
     color: var(--hot-pink);
     display: inline-block;
     position: relative;
     transition: color 1s ease;
+    /* Mobile optimization: improve touch response */
+    touch-action: manipulation;
 }
 
 .alt-highlight::after {
@@ -198,6 +242,8 @@ header.scrolled .logo {
     transform: skewX(15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: hardware acceleration */
+    will-change: transform, background;
 }
 
 .alt-highlight:hover {
@@ -208,6 +254,18 @@ header.scrolled .logo {
     height: 15px;
     background: var(--lime-glow);
     transform: skewX(25deg) translateY(-2px);
+}
+
+/* Mobile touch interactions for alt-highlight elements */
+@media (hover: none) and (pointer: coarse) {
+    .alt-highlight:active {
+        color: var(--light);
+    }
+    .alt-highlight:active::after {
+        height: 15px;
+        background: var(--lime-glow);
+        transform: skewX(25deg) translateY(-2px);
+    }
 }
 
 .hero p {
@@ -221,13 +279,16 @@ header.scrolled .logo {
     opacity: 0;
 }
 
-/* Enhanced Blob animations */
+/* Enhanced Blob animations with mobile optimization */
 .blob {
     position: absolute;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     will-change: transform, opacity;
     transition: all 1s ease;
     pointer-events: none;
+    /* Mobile optimization: reduce complexity on mobile */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .blob-1 {
@@ -240,6 +301,8 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob1 15s ease-in-out infinite alternate, floatBlob 20s ease-in-out infinite;
+    /* Mobile optimization: reduce filter complexity */
+    contain: strict;
 }
 
 .blob-2 {
@@ -252,6 +315,17 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob2 18s ease-in-out infinite alternate, floatBlob 25s ease-in-out infinite reverse;
+    /* Mobile optimization: reduce filter complexity */
+    contain: strict;
+}
+
+/* Reduce blob animations on mobile for better performance */
+@media screen and (max-width: 768px) {
+    .blob-1, .blob-2 {
+        animation-duration: 30s, 40s; /* Slower animations */
+        filter: blur(60px); /* Reduce blur intensity */
+        opacity: 0.2; /* Reduce opacity */
+    }
 }
 
 /* Additional background elements for enhanced visual effects */
@@ -265,6 +339,8 @@ header.scrolled .logo {
     opacity: 0.1;
     z-index: 0;
     animation: pulse 8s ease-in-out infinite alternate;
+    /* Mobile optimization: contain effects */
+    contain: strict;
 }
 
 .bg-accent:nth-child(1) {
@@ -283,15 +359,20 @@ header.scrolled .logo {
 .section {
     padding-top: 2.5rem;
     padding-right: 1rem;
-    padding-bottom: 2.5rem; /* Your desired value */
+    padding-bottom: 2.5rem;
     padding-left: 1rem;
     position: relative;
+    /* Mobile optimization: improve rendering */
+    contain: layout style;
 }
 
 a {
     color: inherit;
     text-decoration: inherit;
     font-weight: inherit;
+    /* Mobile optimization: improve touch targets */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a:hover {
@@ -311,6 +392,8 @@ a:hover {
     width: 100%;
     opacity: 0;
     animation: fadeInUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    /* Mobile optimization: prevent layout shifts */
+    contain: layout;
 }
 
 .portfolio {
@@ -318,6 +401,8 @@ a:hover {
     position: relative;
     overflow: hidden;
     border: none;
+    /* Mobile optimization: improve scrolling performance */
+    contain: layout style paint;
 }
 
 .portfolio::before {
@@ -341,6 +426,8 @@ a:hover {
     position: relative;
     z-index: 1;
     border: none;
+    /* Mobile optimization: improve grid performance */
+    contain: layout style;
 }
 
 .service-card {
@@ -358,6 +445,11 @@ a:hover {
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: improve touch interaction */
+    touch-action: manipulation;
+    cursor: pointer;
+    contain: layout style;
+    will-change: transform, box-shadow;
 }
 
 .service-card::before {
@@ -378,18 +470,41 @@ a:hover {
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
+/* Mobile touch interactions for service cards */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:active {
+        transform: translateY(-5px) scale(1.01);
+        border-color: rgba(50, 205, 50, 0.3);
+        box-shadow: 0 10px 25px rgba(50, 205, 50, 0.15);
+    }
+    
+    .service-card {
+        transition: all 0.3s ease; /* Faster transitions on mobile */
+    }
+}
+
 #altsc:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: rgba(255, 105, 180, 0.3);
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
+
+/* Mobile touch interactions for alt service card */
+@media (hover: none) and (pointer: coarse) {
+    #altsc:active {
+        transform: translateY(-5px) scale(1.01);
+        border-color: rgba(255, 105, 180, 0.3);
+        box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+    }
+}
+
 #altsc h2 {
-    color: var(--hot-pink);  /* Added missing semicolon */
+    color: var(--hot-pink);
     margin-bottom: 1rem;
     transition: all 1s ease;
     position: relative;
-    display: inline-block;   /* Added to make h2 only as wide as its content */
+    display: inline-block;
 }
 
 #altsc h2::after {
@@ -402,15 +517,28 @@ a:hover {
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Mobile optimization: hardware acceleration */
+    will-change: width;
 }
 
 #altsc h2:hover::after {
-    width: 100%;  /* Now 100% will be the width of the text, not full container */
+    width: 100%;
 }
 
 #altsc h2:hover {
     color: var(--light);
     margin-bottom: calc(1rem + 6px);
+}
+
+/* Mobile touch interactions for h2 elements */
+@media (hover: none) and (pointer: coarse) {
+    #altsc h2:active::after {
+        width: 100%;
+    }
+    #altsc h2:active {
+        color: var(--light);
+        margin-bottom: calc(1rem + 6px);
+    }
 }
 
 .service-card h3 {
@@ -424,10 +552,9 @@ a:hover {
     transition: all 1s ease;
     padding-bottom: 2px;
     position: relative;
-    width: fit-content; /* Explicitly set width to content */
+    width: fit-content;
 }
 
-/* Add lime green underline effect to service card h3 */
 .service-card h3::after {
     content: '';
     position: absolute;
@@ -438,6 +565,8 @@ a:hover {
     background: var(--lime);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Mobile optimization: hardware acceleration */
+    will-change: width;
 }
 
 .service-card h3:hover::after {
@@ -464,6 +593,12 @@ a:hover {
     animation: fadeIn 1s ease forwards;
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: improve touch targets */
+    touch-action: manipulation;
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .badge-website {
@@ -516,7 +651,7 @@ a:hover {
     transform: none;
 }
 
-/* Project badges */
+/* Project badges with mobile touch support */
 .service-card:hover .badge-website {
     background-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
@@ -526,6 +661,20 @@ a:hover {
     background-color: rgba(255, 105, 180, 0.3);
     box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
     margin-bottom: calc(1rem + 3px);
+}
+
+/* Mobile touch interactions for badges */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:active .badge-website {
+        background-color: rgba(50, 205, 50, 0.3);
+        box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
+    }
+    
+    .service-card:active .badge-ios {
+        background-color: rgba(255, 105, 180, 0.3);
+        box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+        margin-bottom: calc(1rem + 3px);
+    }
 }
 
 /* H3 animation when service card is hovered */
@@ -538,6 +687,18 @@ a:hover {
     width: 100%;
 }
 
+/* Mobile touch interactions for h3 elements */
+@media (hover: none) and (pointer: coarse) {
+    .service-card:active h3 {
+        color: var(--light);
+        margin-bottom: calc(1rem + 3px);
+    }
+    
+    .service-card:active h3::after {
+        width: 100%;
+    }
+}
+
 footer {
     padding: 2.5rem;
     padding-top: 2rem;
@@ -548,6 +709,8 @@ footer {
     position: relative;
     overflow: hidden;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    /* Mobile optimization: improve rendering */
+    contain: layout style;
 }
 
 footer::before {
@@ -595,18 +758,26 @@ footer::before {
     margin-top: 0;
     text-align: center;
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Mobile optimization: improve touch interaction */
+    touch-action: manipulation;
 }
 
 .footer-logo:hover {
     transform: scale(0.9);
 }
 
+/* Mobile touch interaction for footer logo */
+@media (hover: none) and (pointer: coarse) {
+    .footer-logo:active {
+        transform: scale(0.95);
+    }
+}
 
 .footer-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;         
+    justify-content: center;
     text-align: center;
 }
 
@@ -618,22 +789,28 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     text-decoration: none;
     position: relative;
-    padding: 3px 0;
+    padding: 12px 6px; /* Increased padding for better touch targets */
     font-size: 1.2rem;
+    /* Mobile optimization: improve touch targets */
+    touch-action: manipulation;
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
 }
 
-/* Add rounded underline effect with pseudo-element overlay */
 .footer-links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 1px;
     bottom: 0;
-    left: 50%; /* Start from center */
-    transform: translateX(-50%); /* Center the element */
+    left: 50%;
+    transform: translateX(-50%);
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Mobile optimization: hardware acceleration */
+    will-change: width;
 }
 
 .footer-links a:hover::after {
@@ -649,7 +826,12 @@ footer::before {
     animation: fadeIn 1s ease forwards;
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
-    padding: 3px 0;
+    padding: 12px 3px; /* Increased padding for better touch targets */
+    /* Mobile optimization: improve touch targets */
+    touch-action: manipulation;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
 .alt-a::after {
@@ -662,6 +844,8 @@ footer::before {
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Mobile optimization: hardware acceleration */
+    will-change: width;
 }
 
 .alt-a:hover::after {
@@ -671,6 +855,32 @@ footer::before {
 .alt-a:hover {
     color: var(--light);
     transform: translateY(-2px);
+}
+
+/* Mobile touch interactions for footer links */
+@media (hover: none) and (pointer: coarse) {
+    .footer-links a:active {
+        color: var(--lime);
+        transform: translateY(-1px);
+    }
+    
+    .footer-links a:active::after {
+        width: 100%;
+    }
+    
+    .alt-a:active {
+        color: var(--light);
+        transform: translateY(-1px);
+    }
+    
+    .alt-a:active::after {
+        width: 100%;
+    }
+    
+    /* Faster transitions on mobile */
+    .footer-links a, .alt-a {
+        transition: all 0.3s ease;
+    }
 }
 
 .footer-links a:hover {
@@ -692,7 +902,7 @@ footer::before {
     animation: fadeIn 1s ease forwards 1s;
 }
 
-/* Keep the existing particle CSS, but update the animation */
+/* Particle system with mobile optimization */
 .particles-container {
     position: absolute;
     top: 0;
@@ -702,6 +912,8 @@ footer::before {
     overflow: hidden;
     z-index: 1;
     pointer-events: none;
+    /* Mobile optimization: contain effects */
+    contain: strict;
 }
 
 .particle {
@@ -711,6 +923,9 @@ footer::before {
     border-radius: 50%;
     opacity: 0;
     animation: particleFloat 15s infinite linear;
+    /* Mobile optimization: hardware acceleration */
+    transform: translateZ(0);
+    will-change: transform, opacity;
 }
 
 .particle-lime {
@@ -723,45 +938,81 @@ footer::before {
     box-shadow: 0 0 10px 2px var(--pink-glow);
 }
 
+/* Reduce particle effects on mobile for better performance */
+@media screen and (max-width: 768px) {
+    .particle {
+        width: 4px;
+        height: 4px;
+        animation-duration: 20s; /* Slower animation */
+        box-shadow: none; /* Remove glow effects on mobile */
+    }
+    
+    .particle-lime {
+        box-shadow: 0 0 5px 1px var(--lime-glow);
+    }
+    
+    .particle-pink {
+        box-shadow: 0 0 5px 1px var(--pink-glow);
+    }
+}
+
 #projectSearch {
-  width: 100%;
-  max-width: 400px;
-  padding: 0.75rem 1rem;
-  border-radius: 30px;
-  border: 1px solid var(--lime);
-  background: var(--dark);
-  color: var(--light);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  box-shadow: 0 0 5px var(--lime-glow); /* reduced glow intensity */
-  transition: 
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background-color 0.3s ease,
-    color 0.3s ease;
-  outline: none;
-   opacity: 0;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    border: 1px solid var(--lime);
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 0 5px var(--lime-glow);
+    transition: 
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+    outline: none;
+    opacity: 0;
     animation: fadeIn 0.5s ease forwards 0.5s;
+    /* Mobile optimization: improve input experience */
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    touch-action: manipulation;
+    font-size: 16px; /* Prevent zoom on iOS */
+    min-height: 44px; /* Minimum touch target size */
 }
 
 #projectSearch::placeholder {
-  color: rgba(249, 249, 249, 0.6);
-  font-weight: 300;
+    color: rgba(249, 249, 249, 0.6);
+    font-weight: 300;
 }
 
 #projectSearch:focus {
-  border-color: var(--hot-pink);
-  box-shadow: 0 0 8px var(--pink-glow); /* softer pink glow */
-  background-color: #1a1a1a;
-  color: var(--light);
+    border-color: var(--hot-pink);
+    box-shadow: 0 0 8px var(--pink-glow);
+    background-color: #1a1a1a;
+    color: var(--light);
+    /* Mobile optimization: prevent zoom */
+    transform: none;
 }
 
 #projectSearch:focus::placeholder {
-  color: rgba(255, 105, 180, 0.5);
+    color: rgba(255, 105, 180, 0.5);
 }
 
-/* Enhanced Animations */
+/* Mobile-specific search input optimizations */
+@media screen and (max-width: 768px) {
+    #projectSearch {
+        font-size: 16px; /* Prevent zoom on mobile */
+        padding: 1rem 1.25rem; /* Larger touch targets */
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Enhanced Animations with mobile optimization */
 @keyframes floatBlob {
     0% {
         transform: translate(0, 0) rotate(0deg) scale(1);
@@ -777,6 +1028,21 @@ footer::before {
     }
     100% {
         transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+/* Simplified blob animation for mobile */
+@media screen and (max-width: 768px) {
+    @keyframes floatBlob {
+        0% {
+            transform: translate(0, 0) scale(1);
+        }
+        50% {
+            transform: translate(15px, 20px) scale(1.05);
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
     }
 }
 
@@ -836,6 +1102,20 @@ footer::before {
     }
 }
 
+/* Simplified fadeInUp for mobile */
+@media screen and (max-width: 768px) {
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
 @keyframes shimmer {
     0% {
         left: -100%;
@@ -860,6 +1140,24 @@ footer::before {
     }
 }
 
+/* Simplified pulse animation for mobile */
+@media screen and (max-width: 768px) {
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0.08;
+        }
+        50% {
+            transform: scale(1.1);
+            opacity: 0.12;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 0.08;
+        }
+    }
+}
+
 @keyframes particleFloat {
     0% {
         transform: translate(0, 0) scale(0);
@@ -879,31 +1177,322 @@ footer::before {
     }
 }
 
-/* Make sure animations run smoothly */
+/* Simplified particle animation for mobile */
+@media screen and (max-width: 768px) {
+    @keyframes particleFloat {
+        0% {
+            transform: translate(0, 0) scale(0);
+            opacity: 0;
+        }
+        20% {
+            transform: translate(calc(var(--x-move) * 0.5), calc(var(--y-move) * 0.5)) scale(1);
+            opacity: 0.6;
+        }
+        80% {
+            opacity: 0.4;
+            transform: translate(var(--x-move), var(--y-move)) scale(0.6);
+        }
+        100% {
+            transform: translate(calc(var(--x-move) * 1.5), calc(var(--y-move) * 1.5)) scale(0);
+            opacity: 0;
+        }
+    }
+}
+
+/* Performance optimizations for mobile */
 @media (prefers-reduced-motion: no-preference) {
     .blob, .service-card, .cta-btn, .highlight, .alt-highlight, .footer-links a, .alt-a {
         will-change: transform, opacity;
     }
 }
 
-/* Add Responsive design fixes */
-@media screen and (max-width: 768px) {
-html {
-    font-size: 90%;
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
-.blob-1, .blob-2 {
-        width: 350px;
-        height: 350px;
+    
+    .blob-1, .blob-2, .particle, .bg-accent {
+        animation: none !important;
     }
-.portfolio-grid {
-        grid-template-columns: 1fr;
+    
+    .service-card:hover, .highlight:hover, .alt-highlight:hover {
+        transform: none !important;
     }
 }
 
-/* For high DPI screens, ensure logo stays crisp */
+/* Mobile-specific responsive design fixes */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 90%;
+    }
+    
+    .blob-1, .blob-2 {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    header {
+        padding: 2rem 1.5rem;
+    }
+    
+    header.scrolled {
+        padding: 1.5rem;
+    }
+    
+    .hero {
+        margin-top: 5rem;
+        padding-top: 2rem;
+    }
+    
+    .service-card {
+        padding: 1.25rem;
+    }
+    
+    footer {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Mobile landscape optimizations */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    header {
+        padding: 1.5rem;
+    }
+    
+    header.scrolled {
+        padding: 1rem;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-links {
+        gap: 0.75rem;
+    }
+    
+    .footer-links a {
+        font-size: 1.1rem;
+        padding: 10px 4px;
+    }
+    
+    .project-badge {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+    
+    /* Reduce blob effects further on small screens */
+    .blob-1, .blob-2 {
+        width: 250px;
+        height: 250px;
+        filter: blur(40px);
+        opacity: 0.15;
+    }
+    
+    .bg-accent {
+        width: 100px;
+        height: 100px;
+        filter: blur(40px);
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .service-card {
+        padding: 1rem;
+    }
+    
+    .section {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    header {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    footer {
+        padding: 1.5rem 0.75rem;
+    }
+}
+
+/* High DPI screen optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .logo {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
+    .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        /* Fix for iOS Safari viewport units */
+        min-height: -webkit-fill-available;
+    }
+    
+    #projectSearch {
+        /* Prevent zoom on iOS when focusing inputs */
+        font-size: 16px;
+    }
+}
+
+/* Android Chrome specific optimizations */
+@media screen and (max-width: 768px) {
+    /* Improve scrolling performance on Android */
+    * {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    /* Reduce complex filters on mobile */
+    .blob-1, .blob-2 {
+        filter: blur(50px);
+    }
+    
+    /* Simplify box shadows on mobile */
+    .service-card, .project-badge, header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-card:hover, .service-card:active {
+        box-shadow: 0 5px 15px rgba(50, 205, 50, 0.1);
+    }
+}
+
+/* Battery and performance optimizations */
+@media (prefers-reduced-motion: reduce), (update: slow) {
+    .blob-1, .blob-2, .particle, .bg-accent {
+        animation: none;
+    }
+    
+    * {
+        transition: none !important;
+    }
+}
+
+/* Dark mode optimizations for mobile */
+@media (prefers-color-scheme: dark) {
+    /* Colors are already optimized for dark mode */
+    /* Additional mobile-specific dark mode tweaks can go here */
+}
+
+/* Focus management for mobile accessibility */
+@media screen and (max-width: 768px) {
+    /* Ensure focus indicators are visible on mobile */
+    a:focus, button:focus, input:focus, .service-card:focus {
+        outline: 2px solid var(--lime);
+        outline-offset: 2px;
+    }
+    
+    /* Skip link for mobile screen readers */
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: var(--lime);
+        color: var(--dark);
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 1000001;
+    }
+    
+    .skip-link:focus {
+        top: 6px;
+    }
+}
+
+/* Memory and CPU optimizations for mobile */
+@media screen and (max-width: 768px) {
+    /* Reduce the number of particles on mobile */
+    .particles-container .particle:nth-child(n+6) {
+        display: none;
+    }
+    
+    /* Simplify gradients for better performance */
+    .portfolio::before {
+        background: rgba(50, 205, 50, 0.02);
+    }
+    
+    /* Reduce animation complexity */
+    .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .highlight::after, .alt-highlight::after {
+        transition: all 0.5s ease;
+    }
+}
+
+/* Network-aware optimizations */
+@media (prefers-reduced-data: reduce) {
+    /* Remove non-essential animations and effects */
+    .blob-1, .blob-2, .particle, .bg-accent {
+        display: none;
+    }
+    
+    /* Simplify visual effects */
+    .service-card::before {
+        display: none;
+    }
+    
+    /* Remove blur effects */
+    header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(0, 0, 0, 0.8);
+    }
 }
