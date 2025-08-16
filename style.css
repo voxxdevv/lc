@@ -31,13 +31,14 @@ html, body {
 
 header {
     position: fixed;
-	  margin-bottom: 10px;
+	 margin-bottom: 10px;
     width: 100%;
     top: 0;
     right: 0;
     padding: 3rem;
     display: flex;
-    /* CORRECTED: Removed justify-content and align-items to prevent conflict */
+    justify-content: center;
+    align-items: center;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000000;
@@ -45,7 +46,6 @@ header {
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform, filter;
 }
 
 header.scrolled {
@@ -93,7 +93,7 @@ header.scrolled::before {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
-    will-change: transform, filter;
+
 }
 
 header.scrolled .logo {
@@ -153,7 +153,6 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
-    will-change: color;
 }
 
 .highlight::after {
@@ -168,7 +167,6 @@ header.scrolled .logo {
     transform: skewX(-15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform;
 }
 
 .highlight:hover {
@@ -186,7 +184,6 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
-    will-change: color;
 }
 
 .alt-highlight::after {
@@ -201,7 +198,6 @@ header.scrolled .logo {
     transform: skewX(15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform;
 }
 
 .alt-highlight:hover {
@@ -232,7 +228,6 @@ header.scrolled .logo {
     will-change: transform, opacity;
     transition: all 1s ease;
     pointer-events: none;
-    transform: translateZ(0);
 }
 
 .blob-1 {
@@ -245,7 +240,6 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob1 15s ease-in-out infinite alternate, floatBlob 20s ease-in-out infinite;
-    will-change: transform, opacity, filter;
 }
 
 .blob-2 {
@@ -258,7 +252,6 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob2 18s ease-in-out infinite alternate, floatBlob 25s ease-in-out infinite reverse;
-    will-change: transform, opacity, filter;
 }
 
 /* Additional background elements for enhanced visual effects */
@@ -290,7 +283,7 @@ header.scrolled .logo {
 .section {
     padding-top: 2.5rem;
     padding-right: 1rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 2.5rem; /* Your desired value */
     padding-left: 1rem;
     position: relative;
 }
@@ -365,7 +358,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform;
 }
 
 .service-card::before {
@@ -380,24 +372,24 @@ a:hover {
 }
 
 .service-card:hover {
-    transform: translateY(-10px) scale(1.02) translateZ(0);
+    transform: translateY(-10px) scale(1.02);
     border-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 15px 35px rgba(50, 205, 50, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
 #altsc:hover {
-    transform: translateY(-10px) scale(1.02) translateZ(0);
+    transform: translateY(-10px) scale(1.02);
     border-color: rgba(255, 105, 180, 0.3);
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 #altsc h2 {
-    color: var(--hot-pink);
+    color: var(--hot-pink);  /* Added missing semicolon */
     margin-bottom: 1rem;
     transition: all 1s ease;
     position: relative;
-    display: inline-block;
+    display: inline-block;   /* Added to make h2 only as wide as its content */
 }
 
 #altsc h2::after {
@@ -413,7 +405,7 @@ a:hover {
 }
 
 #altsc h2:hover::after {
-    width: 100%;
+    width: 100%;  /* Now 100% will be the width of the text, not full container */
 }
 
 #altsc h2:hover {
@@ -432,7 +424,7 @@ a:hover {
     transition: all 1s ease;
     padding-bottom: 2px;
     position: relative;
-    width: fit-content;
+    width: fit-content; /* Explicitly set width to content */
 }
 
 /* Add lime green underline effect to service card h3 */
@@ -540,7 +532,6 @@ a:hover {
 .service-card:hover h3 {
     color: var(--light);
     margin-bottom: calc(1rem + 3px);
-    transform: translateZ(0);
 }
 
 .service-card:hover h3::after {
@@ -615,7 +606,7 @@ footer::before {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;         
     text-align: center;
 }
 
@@ -629,7 +620,6 @@ footer::before {
     position: relative;
     padding: 3px 0;
     font-size: 1.2rem;
-    will-change: transform;
 }
 
 /* Add rounded underline effect with pseudo-element overlay */
@@ -639,8 +629,8 @@ footer::before {
     width: 0;
     height: 1px;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%; /* Start from center */
+    transform: translateX(-50%); /* Center the element */
     background: var(--hot-pink);
     border-radius: 1px;
     transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -660,7 +650,6 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
-    will-change: transform;
 }
 
 .alt-a::after {
@@ -681,12 +670,12 @@ footer::before {
 
 .alt-a:hover {
     color: var(--light);
-    transform: translateY(-2px) translateZ(0);
+    transform: translateY(-2px);
 }
 
 .footer-links a:hover {
     color: var(--lime);
-    transform: translateY(-2px) translateZ(0);
+    transform: translateY(-2px);
 }
 
 .footer-links a:hover::after {
@@ -745,7 +734,7 @@ footer::before {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  box-shadow: 0 0 5px var(--lime-glow);
+  box-shadow: 0 0 5px var(--lime-glow); /* reduced glow intensity */
   transition: 
     border-color 0.3s ease,
     box-shadow 0.3s ease,
@@ -763,7 +752,7 @@ footer::before {
 
 #projectSearch:focus {
   border-color: var(--hot-pink);
-  box-shadow: 0 0 8px var(--pink-glow);
+  box-shadow: 0 0 8px var(--pink-glow); /* softer pink glow */
   background-color: #1a1a1a;
   color: var(--light);
 }
@@ -897,31 +886,17 @@ footer::before {
     }
 }
 
-/* Add Responsive design fixes and hardware acceleration */
+/* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
-    html {
-        font-size: 90%;
+html {
+    font-size: 90%;
     }
-    .blob-1, .blob-2 {
+.blob-1, .blob-2 {
         width: 350px;
         height: 350px;
     }
-    .portfolio-grid {
+.portfolio-grid {
         grid-template-columns: 1fr;
-    }
-    
-    /* Hardware acceleration for mobile */
-    header,
-    .hero-content,
-    .highlight,
-    .alt-highlight,
-    .service-card,
-    .service-card h3,
-    .footer-links a,
-    .alt-a,
-    .project-badge {
-        transform: translateZ(0);
-        will-change: transform, opacity, filter;
     }
 }
 
