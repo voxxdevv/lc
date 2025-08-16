@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    /* Color Palette */
     --lime: #32CD32;
     --hot-pink: #FF69B4;
     --dark: #131313;
@@ -10,7 +9,6 @@
     --pink-glow: rgba(255, 105, 180, 0.4);
 }
 
-/* Base styles for a smooth, minimal feel */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +17,7 @@
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 html, body {
@@ -31,17 +29,15 @@ html, body {
     position: relative;
 }
 
-/* The core of the glass effect: Backdrop filter and semi-transparent background.
-  It blurs the content behind the header, creating a frosted appearance.
-*/
 header {
     position: fixed;
-    margin-bottom: 10px;
+	  margin-bottom: 10px;
     width: 100%;
     top: 0;
     right: 0;
     padding: 3rem;
     display: flex;
+    /* CORRECTED: Removed justify-content and align-items to prevent conflict */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000000;
@@ -49,19 +45,17 @@ header {
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    will-change: transform, filter; /* Performance optimization */
+    will-change: transform, filter;
 }
 
-/* Header style change on scroll */
 header.scrolled {
     padding: 2.585rem;
     backdrop-filter: saturate(5) blur(10px);
-    background: none; /* Makes the glass effect more pronounced */
+    background: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Gradient border for a light-refracting effect */
 header::before {
     content: '';
     position: absolute;
@@ -89,7 +83,24 @@ header.scrolled::before {
     z-index: 5;
 }
 
-/* Hero section with background animations */
+
+.logo {
+    height: 4.0625rem;
+    width: 4.0625rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
+    will-change: transform, filter;
+}
+
+header.scrolled .logo {
+    transform: translate(-50%, -50%) scale(0.9);
+    filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
+}
+
 .hero {
     margin-top: 6rem;
     height: auto;
@@ -104,7 +115,39 @@ header.scrolled::before {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Text highlights with a subtle glow and hover effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0),
+        rgba(50, 205, 50, 0.3),
+        rgba(255, 105, 180, 0.3),
+        rgba(255, 255, 255, 0)
+    );
+    z-index: 5;
+}
+
+.hero-content {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.3s;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 0;
+    font-weight: 900;
+    position: relative;
+    padding: 0;
+}
+
 .highlight {
     color: var(--lime);
     display: inline-block;
@@ -171,14 +214,25 @@ header.scrolled::before {
     transform: skewX(25deg) translateY(-2px);
 }
 
-/* Dynamic background elements for a liquid feel */
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 1.5;
+    animation: fadeIn 1.5s ease forwards 0.6s;
+    opacity: 0;
+}
+
+/* Enhanced Blob animations */
 .blob {
     position: absolute;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Initial blob shape */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     will-change: transform, opacity;
     transition: all 1s ease;
     pointer-events: none;
-    transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0);
 }
 
 .blob-1 {
@@ -187,7 +241,7 @@ header.scrolled::before {
     background: var(--lime);
     top: -100px;
     right: -100px;
-    filter: blur(80px); /* Massive blur for a soft glow */
+    filter: blur(80px);
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob1 15s ease-in-out infinite alternate, floatBlob 20s ease-in-out infinite;
@@ -207,7 +261,32 @@ header.scrolled::before {
     will-change: transform, opacity, filter;
 }
 
-/* Portfolio section with grid and service cards */
+/* Additional background elements for enhanced visual effects */
+.bg-accent {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--lime), transparent);
+    filter: blur(60px);
+    opacity: 0.1;
+    z-index: 0;
+    animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.bg-accent:nth-child(1) {
+    top: 20%;
+    right: 20%;
+    animation-delay: 0s;
+}
+
+.bg-accent:nth-child(2) {
+    bottom: 30%;
+    left: 15%;
+    background: linear-gradient(45deg, var(--hot-pink), transparent);
+    animation-delay: 2s;
+}
+
 .section {
     padding-top: 2.5rem;
     padding-right: 1rem;
@@ -216,8 +295,33 @@ header.scrolled::before {
     position: relative;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
 .portfolio {
-    background: rgba(0, 0, 0, 0.3); /* Subtle background for the glass cards */
+    background: rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
     border: none;
@@ -246,7 +350,6 @@ header.scrolled::before {
     border: none;
 }
 
-/* Service cards with a glass-like appearance */
 .service-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
@@ -276,7 +379,6 @@ header.scrolled::before {
     z-index: -1;
 }
 
-/* Hover effects for a dynamic, interactive glass feel */
 .service-card:hover {
     transform: translateY(-10px) scale(1.02) translateZ(0);
     border-color: rgba(50, 205, 50, 0.3);
@@ -290,8 +392,161 @@ header.scrolled::before {
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
+#altsc h2 {
+    color: var(--hot-pink);
+    margin-bottom: 1rem;
+    transition: all 1s ease;
+    position: relative;
+    display: inline-block;
+}
 
-/* Footer with a cohesive glass style */
+#altsc h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background: var(--hot-pink);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#altsc h2:hover::after {
+    width: 100%;
+}
+
+#altsc h2:hover {
+    color: var(--light);
+    margin-bottom: calc(1rem + 6px);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: var(--lime);
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    transition: all 1s ease;
+    padding-bottom: 2px;
+    position: relative;
+    width: fit-content;
+}
+
+/* Add lime green underline effect to service card h3 */
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: var(--lime);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.service-card h3:hover::after {
+    width: 100%;
+}
+
+.service-card p {
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    width: auto;
+    max-width: fit-content;
+    animation: fadeIn 1s ease forwards;
+    transition: all 1s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.badge-website {
+    background-color: rgba(50, 205, 50, 0.2);
+    margin-bottom: 1.25rem;
+    margin-top: 0.25rem;
+    color: var(--lime);
+    border: 1px solid var(--lime);
+}
+
+.badge-website:hover {
+    background-color: rgba(50, 205, 50, 0.3);
+    box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
+}
+
+.badge-ios {
+    background-color: rgba(255, 105, 180, 0.2);
+    margin-bottom: 1.25rem;
+    margin-top: 0.25rem;
+    color: var(--hot-pink);
+    border: 1px solid var(--hot-pink);
+}
+
+.badge-ios:hover {
+    background-color: rgba(255, 105, 180, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+}
+
+.badge-platforms {
+    background-color: rgba(50, 205, 50, 0.2);
+    color: var(--lime);
+    border: 1px solid var(--lime);
+    margin: 0;
+}
+
+.badge-platforms:hover {
+    background-color: rgba(50, 205, 50, 0.2);
+    transform: none;
+}
+
+.badge-misc {
+    background-color: rgba(255, 105, 180, 0.2);
+    color: var(--hot-pink);
+    border: 1px solid var(--hot-pink);
+    margin: 0;
+}
+
+.badge-misc:hover {
+    background-color: rgba(255, 105, 180, 0.2);
+    transform: none;
+}
+
+/* Project badges */
+.service-card:hover .badge-website {
+    background-color: rgba(50, 205, 50, 0.3);
+    box-shadow: 0 5px 15px rgba(50, 205, 50, 0.2);
+}
+
+.service-card:hover .badge-ios {
+    background-color: rgba(255, 105, 180, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    margin-bottom: calc(1rem + 3px);
+}
+
+/* H3 animation when service card is hovered */
+.service-card:hover h3 {
+    color: var(--light);
+    margin-bottom: calc(1rem + 3px);
+    transform: translateZ(0);
+}
+
+.service-card:hover h3::after {
+    width: 100%;
+}
+
 footer {
     padding: 2.5rem;
     padding-top: 2rem;
@@ -317,6 +572,204 @@ footer::before {
         rgba(255, 105, 180, 0.3),
         rgba(255, 255, 255, 0)
     );
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: 0.5rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--lime), var(--hot-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    position: relative;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-logo:hover {
+    transform: scale(0.9);
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-links a {
+    color: var(--light);
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
+    text-decoration: none;
+    position: relative;
+    padding: 3px 0;
+    font-size: 1.2rem;
+    will-change: transform;
+}
+
+/* Add rounded underline effect with pseudo-element overlay */
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--hot-pink);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.alt-a {
+    display: inline-block;
+    color: var(--hot-pink);
+    text-decoration: none;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
+    position: relative;
+    padding: 3px 0;
+    will-change: transform;
+}
+
+.alt-a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: var(--hot-pink);
+    border-radius: 1px;
+    transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.alt-a:hover::after {
+    width: 100%;
+}
+
+.alt-a:hover {
+    color: var(--light);
+    transform: translateY(-2px) translateZ(0);
+}
+
+.footer-links a:hover {
+    color: var(--lime);
+    transform: translateY(-2px) translateZ(0);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-text {
+    width: 100%;
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+}
+
+/* Keep the existing particle CSS, but update the animation */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 15s infinite linear;
+}
+
+.particle-lime {
+    background: var(--lime);
+    box-shadow: 0 0 10px 2px var(--lime-glow);
+}
+
+.particle-pink {
+    background: var(--hot-pink);
+    box-shadow: 0 0 10px 2px var(--pink-glow);
+}
+
+#projectSearch {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  border: 1px solid var(--lime);
+  background: var(--dark);
+  color: var(--light);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 0 5px var(--lime-glow);
+  transition: 
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+  outline: none;
+   opacity: 0;
+    animation: fadeIn 0.5s ease forwards 0.5s;
+}
+
+#projectSearch::placeholder {
+  color: rgba(249, 249, 249, 0.6);
+  font-weight: 300;
+}
+
+#projectSearch:focus {
+  border-color: var(--hot-pink);
+  box-shadow: 0 0 8px var(--pink-glow);
+  background-color: #1a1a1a;
+  color: var(--light);
+}
+
+#projectSearch:focus::placeholder {
+  color: rgba(255, 105, 180, 0.5);
 }
 
 /* Enhanced Animations */
@@ -437,13 +890,14 @@ footer::before {
     }
 }
 
-/* Media Queries for Responsiveness and Performance */
+/* Make sure animations run smoothly */
 @media (prefers-reduced-motion: no-preference) {
-    .blob, .service-card, .highlight, .alt-highlight, .footer-links a, .alt-a {
+    .blob, .service-card, .cta-btn, .highlight, .alt-highlight, .footer-links a, .alt-a {
         will-change: transform, opacity;
     }
 }
 
+/* Add Responsive design fixes and hardware acceleration */
 @media screen and (max-width: 768px) {
     html {
         font-size: 90%;
@@ -456,6 +910,7 @@ footer::before {
         grid-template-columns: 1fr;
     }
     
+    /* Hardware acceleration for mobile */
     header,
     .hero-content,
     .highlight,
@@ -470,6 +925,7 @@ footer::before {
     }
 }
 
+/* For high DPI screens, ensure logo stays crisp */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo {
     image-rendering: -webkit-optimize-contrast;
