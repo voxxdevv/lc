@@ -101,6 +101,10 @@ header.scrolled .logo {
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
 
+header.scrolled .logo:hover {
+    transform: scale(0.8);
+}
+
 .hero {
     margin-top: 6rem;
     height: auto;
