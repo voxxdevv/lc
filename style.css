@@ -45,7 +45,7 @@ header {
     z-index: 1000000;
     border-bottom: none;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: none;
+    background: rgba(255, 255, 255, 0.1); /* Add semi-transparent background */
     border-radius: 0 0 25px 25px;
 }
 
@@ -58,7 +58,7 @@ header::before {
     height: 25px;
     width: 25px;
     border-top-right-radius: 25px;
-    box-shadow: 0 -25px 0 0 rgba(255, 255, 255, 0.1); /* Adjust color as needed */
+    box-shadow: 0 -25px 0 0 rgba(255, 255, 255, 0.1);
 }
 
 header::after {
@@ -70,9 +70,8 @@ header::after {
     height: 25px;
     width: 25px;
     border-top-left-radius: 25px;
-    box-shadow: 0 -25px 0 0 rgba(255, 255, 255, 0.1); /* Adjust color as needed */
+    box-shadow: 0 -25px 0 0 rgba(255, 255, 255, 0.1);
 }
-
 header.scrolled {
     padding: 2.585rem;
     padding-top: 2.7rem;
