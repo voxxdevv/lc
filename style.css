@@ -39,8 +39,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(2.5);
+    -webkit-backdrop-filter: blur(20px) saturate(2.5);
     z-index: 1000000;
     border-bottom: none;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -54,6 +54,8 @@ header.scrolled {
     background: none;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 header::before {
@@ -100,6 +102,7 @@ header.scrolled .logo {
     transform: translate(-50%, -50%) scale(0.9);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.15));
 }
+
 .hero {
   margin-top: 6rem;
   height: auto;
@@ -114,7 +117,8 @@ header.scrolled .logo {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     backdrop-filter: saturate(5) blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .hero-content {
