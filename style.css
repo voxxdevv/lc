@@ -46,6 +46,7 @@ header {
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(0, 0, 0, 0.3);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    will-change: transform, filter; /* ADDED for hardware acceleration */
 }
 
 header.scrolled {
@@ -93,6 +94,7 @@ header.scrolled::before {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.3));
+    will-change: transform, filter; /* ADDED for hardware acceleration */
 
 }
 
@@ -153,6 +155,7 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
+    will-change: color; /* ADDED for hardware acceleration */
 }
 
 .highlight::after {
@@ -167,6 +170,7 @@ header.scrolled .logo {
     transform: skewX(-15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    will-change: transform; /* ADDED for hardware acceleration */
 }
 
 .highlight:hover {
@@ -184,6 +188,7 @@ header.scrolled .logo {
     display: inline-block;
     position: relative;
     transition: color 1s ease;
+    will-change: color; /* ADDED for hardware acceleration */
 }
 
 .alt-highlight::after {
@@ -198,6 +203,7 @@ header.scrolled .logo {
     transform: skewX(15deg);
     transition: all 1s ease;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    will-change: transform; /* ADDED for hardware acceleration */
 }
 
 .alt-highlight:hover {
@@ -228,6 +234,7 @@ header.scrolled .logo {
     will-change: transform, opacity;
     transition: all 1s ease;
     pointer-events: none;
+    transform: translateZ(0); /* ADDED for hardware acceleration */
 }
 
 .blob-1 {
@@ -240,6 +247,7 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob1 15s ease-in-out infinite alternate, floatBlob 20s ease-in-out infinite;
+    will-change: transform, opacity, filter; /* ADDED for hardware acceleration */
 }
 
 .blob-2 {
@@ -252,6 +260,7 @@ header.scrolled .logo {
     opacity: 0.3;
     z-index: 1;
     animation: morphBlob2 18s ease-in-out infinite alternate, floatBlob 25s ease-in-out infinite reverse;
+    will-change: transform, opacity, filter; /* ADDED for hardware acceleration */
 }
 
 /* Additional background elements for enhanced visual effects */
@@ -358,6 +367,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    will-change: transform; /* ADDED for hardware acceleration */
 }
 
 .service-card::before {
@@ -372,14 +382,14 @@ a:hover {
 }
 
 .service-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
     border-color: rgba(50, 205, 50, 0.3);
     box-shadow: 0 15px 35px rgba(50, 205, 50, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
 }
 
 #altsc:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
     border-color: rgba(255, 105, 180, 0.3);
     box-shadow: 0 15px 35px rgba(255, 105, 180, 0.15);
     background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%);
@@ -532,6 +542,7 @@ a:hover {
 .service-card:hover h3 {
     color: var(--light);
     margin-bottom: calc(1rem + 3px);
+    transform: translateZ(0); /* ADDED for hardware acceleration */
 }
 
 .service-card:hover h3::after {
@@ -620,6 +631,7 @@ footer::before {
     position: relative;
     padding: 3px 0;
     font-size: 1.2rem;
+    will-change: transform; /* ADDED for hardware acceleration */
 }
 
 /* Add rounded underline effect with pseudo-element overlay */
@@ -650,6 +662,7 @@ footer::before {
     animation-delay: calc(var(--link-index, 0) * 0.1s + 0.3s);
     position: relative;
     padding: 3px 0;
+    will-change: transform; /* ADDED for hardware acceleration */
 }
 
 .alt-a::after {
@@ -670,12 +683,12 @@ footer::before {
 
 .alt-a:hover {
     color: var(--light);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
 }
 
 .footer-links a:hover {
     color: var(--lime);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0); /* ADDED translateZ(0) for hardware acceleration */
 }
 
 .footer-links a:hover::after {
@@ -888,15 +901,30 @@ footer::before {
 
 /* Add Responsive design fixes */
 @media screen and (max-width: 768px) {
-html {
-    font-size: 90%;
+    html {
+        font-size: 90%;
     }
-.blob-1, .blob-2 {
+    .blob-1, .blob-2 {
         width: 350px;
         height: 350px;
     }
-.portfolio-grid {
+    .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* ADDED for hardware acceleration on mobile */
+    header,
+    .logo,
+    .hero-content,
+    .highlight,
+    .alt-highlight,
+    .service-card,
+    .service-card h3,
+    .footer-links a,
+    .alt-a,
+    .project-badge {
+        transform: translateZ(0);
+        will-change: transform, opacity, filter;
     }
 }
 
@@ -906,90 +934,4 @@ html {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
-}
-
-/* Mobile Performance & UX Optimizations */
-
-/* Better font rendering on mobile */
-html, body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  touch-action: manipulation; /* prevent 300ms click delay */
-  -webkit-tap-highlight-color: transparent; /* remove tap highlight */
-  -webkit-touch-callout: none; /* disable long-press menu on iOS images/links */
-}
-
-/* Prevent text resizing by OS zoom/scaling */
-body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-}
-
-/* Optimize GPU usage on mobile for smoother animations */
-.blob,
-.service-card,
-.highlight,
-.alt-highlight,
-.footer-links a,
-.alt-a,
-.logo {
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0); /* force GPU acceleration */
-  transform: translateZ(0);
-}
-
-/* Optimize sticky header scroll on iOS Safari */
-header {
-  -webkit-overflow-scrolling: touch;
-  will-change: transform, backdrop-filter;
-}
-
-/* Improve input UX for search box */
-#projectSearch {
-  -webkit-appearance: none; /* remove iOS rounded default */
-  -moz-appearance: none;
-  appearance: none;
-  caret-color: var(--hot-pink); /* better visible caret */
-}
-
-/* Prevent zoom on input focus in iOS Safari */
-@supports (-webkit-touch-callout: none) {
-  #projectSearch {
-    font-size: 16px; /* iOS requires min 16px to prevent zoom */
-  }
-}
-
-/* Smoother scrolling for long sections */
-.section,
-.hero,
-.portfolio {
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Touch-friendly tap targets */
-a, button, .service-card {
-  min-height: 44px; /* recommended by Apple for finger tap */
-  min-width: 44px;
-}
-
-/* Battery-friendly animations on mobile */
-@media (max-width: 768px) {
-  .blob-1, .blob-2 {
-    animation-duration: 25s; /* slower for less CPU drain */
-    filter: blur(60px); /* reduce heavy blur for perf */
-    opacity: 0.25; 
-  }
-  .particles-container {
-    display: none; /* optional: hide particles on mobile to save perf */
-  }
-}
-
-/* Optimize images/logos */
-img, .logo {
-  max-width: 100%;
-  height: auto;
-  -webkit-user-drag: none; /* prevent drag on mobile */
-  user-select: none;
 }
